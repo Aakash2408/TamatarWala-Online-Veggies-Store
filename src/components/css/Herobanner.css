@@ -19,9 +19,26 @@
 .css-c5gjwr {
     min-height: 500px;
     padding: 60px;
+}}
+@media screen and (max-width: 1024px){
+    .css-c5gjwr {
+        min-height: 400px;
+        padding: 60px;
+    }
+
 }
-}
+@media screen and (max-width: 768px){
+.css-c5gjwr {
+    min-height: 350px;
+    padding: 30px;
+}}
 @media screen and (min-width: 768px){
+
+body {
+    font-size: 15px;
+}
+}
+@media screen and (max-width: 768px){
 
 .css-c5gjwr::after {
     background: linear-gradient(to right,rgba(0,0,0,0.48) ,rgba(0,0,0,0));
