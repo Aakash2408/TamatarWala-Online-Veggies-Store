@@ -42,7 +42,7 @@ const HeroBanner = () => (
         <h1>
           <p>Stay Home, <br/>&amp; Get Your Daily Need's</p>
         </h1>
-          <p>Start your daily shopping with <strong>Jamcart</strong>.</p>
+          <p>Start your daily shopping with <strong>TamatarWala</strong>.</p>
           <a href="#feature" >
             <button class="css-j5c32g"><span class="button">Order Now</span>
               <svg width="15.394" height="10" viewBox="0 0 15.394 10">
