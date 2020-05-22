@@ -1,6 +1,7 @@
 import React from 'react';
-import nav  from "./components/nav";
-import header from "./components/header";
+// import Appbar from "./components/Appbar";
+import Navbar  from "./components/nav";
+import Header from "./components/header";
 import HeroBanner from "./components/Hero-banner" ;
 import Cards from "./components/cards";
 // import logo from './logo.svg';
@@ -10,8 +11,10 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-          <nav />
-          <header/>
+         
+          {/* <Appbar/> */}
+          <Navbar/>
+          <Header />
           <HeroBanner />
           <Cards/>
           
