@@ -14,25 +14,24 @@ const CardExample = () => {
         <MDBCard
           className='card-image'
           style={{
-            background:
-              "url('https://images.unsplash.com/photo-1557844352-761f2565b576?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'),linear-gradient(to right,rgba(0,0,0,0.8) ,rgba(0,0,0,0))",
-            height:"40vh",
+            background:"url('https://images.pexels.com/photos/1656663/pexels-photo-1656663.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')",
+            height:"30vh",
             backgroundPosition:"center",
-            backgroundSize:"cover"
+            backgroundSize:"cover",
+            zIndex:"1"
+            
 
           }}
         >
-          <div className='text-white text-center d-flex align-items-center py-5 px-4'>
-            <div>
-              <h5 className='white-text'>
-                 Fruits
-              </h5>
-              <MDBCardTitle tag='h3' className='pt-2'>
-                <strong></strong>
+          <div className='text-white'>
+            
+              
+              <MDBCardTitle tag='h3'  className="text-white">
+                <strong>Vegetables</strong>
               </MDBCardTitle>
               
               
-            </div>
+            
           </div>
         </MDBCard>
         </MDBCol>
@@ -42,26 +41,24 @@ const CardExample = () => {
           className='card-image'
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1488459716781-31db52582fe9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'),linear-gradient(to right,rgba(0,0,0,0.9) ,rgba(0,0,0,0))",
-            height:"40vh",
+              "url('https://images.pexels.com/photos/1253250/pexels-photo-1253250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')",
+            height:"30vh ",
             boxShadow: "0 2px 4px rgba(0,0,0,0.06)",
             backgroundPosition:"center",
             backgroundSize:"cover"
 
           }}
         >
-          <div className='text-white text-center d-flex align-items-center py-5 px-4'>
-            <div>
-              <h5 className='white-text'>
-                 Fruits
-              </h5>
-              <MDBCardTitle tag='h3' className='pt-2'>
-                <strong></strong>
+          <div className='text-white'>
+            
+             
+              <MDBCardTitle tag='h3' className='text-white'>
+                <strong>Fruits</strong>
               </MDBCardTitle>
               
               
             </div>
-          </div>
+          
         </MDBCard>   
     </MDBCol>
 

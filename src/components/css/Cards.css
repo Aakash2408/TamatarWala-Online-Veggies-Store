@@ -6,10 +6,44 @@
 @media screen and (max-width: 768px){
 
     .card-image{
-     margin-top:15px;
+     margin-top:20px;
+     height:18vh !important;
+     background-size: cover;
+     background-position: center;
+     border-radius: 5px !important;
+    }}
+    .text-white{
+        padding-top:7%;
+        font-size:1.2em;
     }
 
-    .card-image::after {
-        background: linear-gradient(to right,rgba(0,0,0,0.48) ,rgba(0,0,0,0)) !important;
-    }
-    }
+
+.card-image::after {
+ content: "";
+display: block;           
+ width: 100%;
+height: 100%;
+ background: linear-gradient(to right,rgba(0,0,0,0.7) ,rgba(0,0,0,0.6));
+ position: absolute;
+top: 0;
+left: 0;
+z-index: 0;
+}
+.card-image:hover{
+    background: linear-gradient(to right,rgba(0,0,0,0.0) ,rgba(0,0,0,0.6));
+    z-index:999;
+    cursor: pointer;
+
+}
+
+
+.text-white{
+    z-index: 999;
+    padding-bottom:5% !important;
+    text-align: center;
+    font-weight: 400;
+    
+} 
+
+
+    
