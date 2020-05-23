@@ -5,6 +5,7 @@ import Header from "./components/header";
 import HeroBanner from "./components/Hero-banner" ;
 import Cards from "./components/cards";
 import FooterBanner from "./components/Footer-banner";
+import Footer from "./components/footer";
 // import logo from './logo.svg';
 import './App.css';
 
@@ -19,7 +20,7 @@ function App() {
           <HeroBanner />
           <Cards/>
           <FooterBanner />
-          
+          <Footer/>
 
  
     </div>
