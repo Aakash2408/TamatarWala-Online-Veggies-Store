@@ -4,6 +4,7 @@ import Navbar  from "./components/nav";
 import Header from "./components/header";
 import HeroBanner from "./components/Hero-banner" ;
 import Cards from "./components/cards";
+import FooterBanner from "./components/Footer-banner";
 // import logo from './logo.svg';
 import './App.css';
 
@@ -13,10 +14,11 @@ function App() {
     <div className="App">
          
           {/* <Appbar/> */}
-          <Navbar/>
+          {/* <Navbar/> */}
           <Header />
           <HeroBanner />
           <Cards/>
+          <FooterBanner />
           
 
  
