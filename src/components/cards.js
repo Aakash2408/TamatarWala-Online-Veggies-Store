@@ -10,7 +10,7 @@ const CardExample = () => {
     <div class="css-11zk6ke">
     <section class="cards-section">
     <MDBRow className="MDBRow">
-     <MDBCol md='6' className="MDBCol">
+     <MDBCol md='4' className="MDBCol">
         <MDBCard
           className='card-image'
           style={{
@@ -31,7 +31,28 @@ const CardExample = () => {
         </MDBCard>
         </MDBCol>
 
-    <MDBCol md='6'>
+        <MDBCol md='4' className="MDBCol">
+        <MDBCard
+          className='card-image'
+          style={{
+            background:"url('https://images.unsplash.com/photo-1580716937776-6196d257ee3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')",
+            height:"30vh",
+            backgroundPosition:"center",
+            backgroundSize:"cover",
+            zIndex:"1"
+            
+
+          }}
+        >
+        <MDBCardTitle tag='h3' className='text-white'>
+                <strong>Herbs</strong>
+
+              </MDBCardTitle>
+          
+        </MDBCard>
+        </MDBCol>
+
+    <MDBCol md='4'>
        <MDBCard
           className='card-image'
           style={{

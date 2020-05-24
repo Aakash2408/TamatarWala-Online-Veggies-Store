@@ -5,6 +5,7 @@ import Header from "./components/header";
 import HeroBanner from "./components/Hero-banner" ;
 import Cards from "./components/cards";
 import FooterBanner from "./components/Footer-banner";
+import FooterBanner2 from "./components/Footer-banner2";
 import Footer from "./components/footer";
 import HomeCards from "./components/home-cards1";
 import HomeCards2 from "./components/home-cards2";
@@ -22,6 +23,7 @@ function App() {
           <HeroBanner />
           <Cards/>
           <HomeCards/>
+          <FooterBanner2/>
           <HomeCards2/>
           <FooterBanner />
           <Footer/>

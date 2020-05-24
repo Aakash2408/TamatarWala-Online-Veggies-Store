@@ -12,7 +12,7 @@
     -webkit-flex-grow: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
-    padding-top: 20px;
+    /* padding-top: 20px; */
     padding-bottom: 20px;
 }
 @media screen and (min-width: 1024px){
