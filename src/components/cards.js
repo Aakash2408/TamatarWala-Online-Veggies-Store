@@ -23,16 +23,11 @@ const CardExample = () => {
 
           }}
         >
-          <div className='text-white'>
-            
-              
-              <MDBCardTitle tag='h3'  className="text-white">
+        <MDBCardTitle tag='h3' className='text-white'>
                 <strong>Vegetables</strong>
+
               </MDBCardTitle>
-              
-              
-            
-          </div>
+          
         </MDBCard>
         </MDBCol>
 
@@ -47,45 +42,26 @@ const CardExample = () => {
             backgroundPosition:"center",
             backgroundSize:"cover"
 
-          }}
-        >
-          <div className='text-white'>
-            
-             
-              <MDBCardTitle tag='h3' className='text-white'>
+          }}>
+        
+          
+          
+              
+              
+                <MDBCardTitle tag='h3' className='text-white'>
                 <strong>Fruits</strong>
+
               </MDBCardTitle>
               
               
-            </div>
+                 
+              
+           
           
         </MDBCard>   
     </MDBCol>
 
-         {/* <MDBCol md='4' >
-        <MDBCard
-          className='card-image'
-          style={{
-            backgroundImage:
-              "url('https://mdbootstrap.com/img/Photos/Horizontal/City/6-col/img%20(47).jpg')"
-          }}
-        >
-          <div className='text-white text-center d-flex align-items-center rgba-indigo-strong py-5 px-4'>
-            <div>
-              <h5 className='white-text'>
-                 Fruits
-              </h5>
-              <MDBCardTitle tag='h3' className='pt-2'>
-                <strong>This is card title</strong>
-              </MDBCardTitle>
-             
-              <MDBBtn color='deep-orange'>
-                <MDBIcon icon='clone left' /> View project
-              </MDBBtn>
-            </div>
-          </div>
-        </MDBCard>
-         </MDBCol> */}
+         
       
     </MDBRow>
     </section>
