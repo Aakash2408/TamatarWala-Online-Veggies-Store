@@ -5,10 +5,10 @@
 
 .css-vz0s8c {
     box-sizing: border-box;
-    margin: 0;
+    margin-top: 10px;
     min-width: 0;
     padding: 30px;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
     border-radius: 6px;
     background-color: white;
 }
@@ -57,7 +57,7 @@
         min-width: 0;
         position: relative;
         margin-top:20px;
-        height:6rem !important;
+        height:7.5rem !important;
         background-position: center;
         background-size: cover;
         

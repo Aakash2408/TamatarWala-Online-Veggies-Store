@@ -11,7 +11,15 @@
      background-size: cover;
      background-position: center;
      border-radius: 5px !important;
-    }}
+     grid-template-columns: 1fr 1fr 1fr  !important ;
+    }
+     .MDBRow{
+        grid-template-columns: 1fr 1fr 1fr  !important ;
+     }
+
+
+}
+
     
 
 
