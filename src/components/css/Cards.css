@@ -54,10 +54,9 @@ z-index: 0;
     margin-top: 4px;
 }
 
-.card-image:hover{
-    background: linear-gradient(to right,rgba(0,0,0,0.0) ,rgba(0,0,0,0.6));
-    z-index:999;
-    cursor: pointer;
+.card-image{
+    margin-top:20px;
+    border-radius: 10px;
     
 }
     

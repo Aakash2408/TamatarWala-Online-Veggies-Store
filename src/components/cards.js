@@ -27,13 +27,7 @@ const CardExample = () => {
                 <strong>Vegetables</strong>
 
               </MDBCardTitle>
-         {/* <figcaption>
-    <div className="square">
-      <div></div>
-    </div>
-    <h2><span> Switzerland</span></h2>
-    <p>Starting from 45,000INR</p>
-  </figcaption> */}
+          
         </MDBCard>
         </MDBCol>
 
