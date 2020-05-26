@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from "./header";
 import "./css/Cards.css";
 import "mdbreact/dist/css/mdb.css";
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -8,6 +9,8 @@ import { MDBCard, MDBCardTitle, MDBBtn, MDBRow, MDBCol, MDBIcon } from 'mdbreact
 
 const CardExample = () => {
   return (
+<div>
+    {/* <Header /> */}
     <div class="css-11zk6ke">
     <section class="cards-section">
     <MDBRow className="MDBRow">
@@ -16,7 +19,7 @@ const CardExample = () => {
         <MDBCard 
           className='card-image'
           style={{
-            background:"url('https://images.pexels.com/photos/1656663/pexels-photo-1656663.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')",
+            background:"url('https://images.unsplash.com/photo-1489450278009-822e9be04dff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80')",
             height:"30vh",
             backgroundPosition:"center",
             backgroundSize:"cover",
@@ -39,7 +42,7 @@ const CardExample = () => {
         <MDBCard 
           className='card-image'
           style={{
-            background:"url('https://images.unsplash.com/photo-1580716937776-6196d257ee3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')",
+            background:"url('https://images.unsplash.com/photo-1562592306-54967af3926d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')",
             height:"30vh",
             backgroundPosition:"center",
             backgroundSize:"cover",
@@ -94,6 +97,7 @@ const CardExample = () => {
     </MDBRow>
     </section>
     </div>
+</div>    
   )
 }
 

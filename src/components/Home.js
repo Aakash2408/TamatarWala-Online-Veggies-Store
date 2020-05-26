@@ -13,7 +13,6 @@ import  Footer   from "./footer"
 function Home() {
     return(
         <div>
-       
         <HeroBanner />
         <Cards />
         <HomeCards1/>
