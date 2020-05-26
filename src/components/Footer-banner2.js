@@ -6,7 +6,7 @@ const FooterBanner2 = () => (
     <section className="css-894nru">
     <header className="css-8cvskl">
         <h3 className="css-fqak9j">How It Works</h3>
-        <div className="css-vurnku">
+        <div className="css-para">
             Luxury goods straight from the same manufacturers as your favorite brands.
         </div>
     </header>

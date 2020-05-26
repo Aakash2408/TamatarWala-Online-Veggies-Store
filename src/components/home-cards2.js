@@ -1,6 +1,6 @@
 import React  from 'react';
 import "./css/homecards.css";
-import data2 from "./data2";
+import data from "./data";
 
 
 const HomeCards2  = () =>{
@@ -15,7 +15,7 @@ const HomeCards2  = () =>{
        <div className="content">
        <div className="products">
        {
-           data2.products.map(product => 
+           data.products.map(product => 
            <li>
         <div className="product">
         <img className="product-image" src={product.image}></img>
