@@ -3,6 +3,7 @@ import "./css/Cards.css";
 import "mdbreact/dist/css/mdb.css";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import "bootstrap-css-only/css/bootstrap.min.css";
+import {Link} from 'react-router-dom';
 import { MDBCard, MDBCardTitle, MDBBtn, MDBRow, MDBCol, MDBIcon } from 'mdbreact';
 
 const CardExample = () => {
@@ -11,7 +12,8 @@ const CardExample = () => {
     <section class="cards-section">
     <MDBRow className="MDBRow">
      <MDBCol md='4' className="MDBCol">
-        <MDBCard
+     <Link to="/vegetables">
+        <MDBCard 
           className='card-image'
           style={{
             background:"url('https://images.pexels.com/photos/1656663/pexels-photo-1656663.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')",
@@ -29,10 +31,12 @@ const CardExample = () => {
               </MDBCardTitle>
           
         </MDBCard>
+        </Link>
         </MDBCol>
 
         <MDBCol md='4' className="MDBCol">
-        <MDBCard
+        <Link to="/herbs">
+        <MDBCard 
           className='card-image'
           style={{
             background:"url('https://images.unsplash.com/photo-1580716937776-6196d257ee3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')",
@@ -50,10 +54,12 @@ const CardExample = () => {
               </MDBCardTitle>
           
         </MDBCard>
+        </Link>
         </MDBCol>
 
     <MDBCol md='4'>
-       <MDBCard
+    <Link to="/fruits">
+       <MDBCard 
           className='card-image'
           style={{
             backgroundImage:
@@ -79,7 +85,8 @@ const CardExample = () => {
               
            
           
-        </MDBCard>   
+        </MDBCard> 
+        </Link>  
     </MDBCol>
 
          

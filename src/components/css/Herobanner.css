@@ -29,7 +29,7 @@
 }
 @media screen and (max-width: 768px){
 .css-c5gjwr {
-    min-height: 350px;
+    min-height: 330px !important;
     padding: 30px;
 }}
 @media screen and (min-width: 768px){
