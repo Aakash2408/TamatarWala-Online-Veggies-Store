@@ -1,15 +1,15 @@
 import React  from 'react';
 import "./css/homecards.css";
-import data from "./data";
+import data from "./data2";
 
 
-const HomeCards2  = () =>{
+const HomeCards  = () =>{
     return(
     <div className="css-11zk6ke">
         <div id="feature" class="css-vz0s8c">
-        <div className="css-oh3fg6">
-           <h3 className="css-fqak9j">Featured Product</h3>
-        </div>
+        {/* <div className="css-oh3fg6">
+           <h3 className="css-fqak9j">Immunity Booster</h3>
+        </div> */}
    
        <div className="main">
        <div className="content">
@@ -49,4 +49,4 @@ const HomeCards2  = () =>{
      
     )
 }
-export default HomeCards2;
+export default HomeCards;

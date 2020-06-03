@@ -1,6 +1,7 @@
 import React from 'react';
-import data from "./data3";
+import data from "./data4";
 import './css/Herbs.css';
+// import './css/Vegetables.css';
 const Herbs = () =>{
     return(
 <div>

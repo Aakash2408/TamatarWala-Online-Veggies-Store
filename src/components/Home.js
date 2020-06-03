@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState,useEffect} from 'react';
 import Header from "./header";
 import HeroBanner from "./Hero-banner";
 import Cards from "./cards";
@@ -6,11 +6,13 @@ import HomeCards1 from "./home-cards2";
 import HomeCards2 from "./home-cards1";
 import FooterBanner1 from "./Footer-banner";
 import FooterBanner2 from "./Footer-banner2";
-import  Footer   from "./footer"
+import  Footer   from "./footer";
+import axios from 'axios';
 
 
 
 function Home() {
+
     return(
         <div>
         <HeroBanner />

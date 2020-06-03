@@ -24,6 +24,17 @@
   padding-left: 20px;
   padding-right: 20px;
 }
+.css-lx4zgw {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
 
 
 .css-yiublk {
@@ -258,4 +269,26 @@
   border-color: #E6E6E6;
   /* -webkit-transition: border-color 0.2s ease; */
   transition: border-color 0.2s ease;
+}
+
+.css-lx4zgw {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+
+  display: flex;
+
+  -webkit-box-align: center;
+
+  align-items: center;
+}
+@media screen and (min-width: 768px){
+.css-lx4zgw a svg {
+    width: 19px;
+    height: 19px;
+}
+}
+.css-lx4zgw a svg {
+  width: 19.2px;
+  height: 19.2px;
 }

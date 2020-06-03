@@ -1,10 +1,17 @@
-import React  from 'react';
+import React,{useState}  from 'react';
 import "./css/homecards.css";
 import data from "./data";
+import {connect} from 'react-redux';
 
 
-const HomeCards  = () =>{
-    return(
+
+const HomeCards  = (props) =>{
+    console.log(props);
+    //  const[basketNumbers,setBasketNumbers]=useState(0);
+    //  const addToBasket=()=>{
+    // setBasketNumbers(basketNumbers + 1); 
+    //     }
+return(
     <div className="css-11zk6ke">
         <div id="feature" class="css-vz0s8c">
         {/* <div className="css-oh3fg6">
@@ -44,9 +51,10 @@ const HomeCards  = () =>{
      
      
      </div>
+    
     </div> 
     
      
     )
 }
-export default HomeCards;
+export default (HomeCards);

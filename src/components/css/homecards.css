@@ -161,3 +161,8 @@
     margin-left: auto;
     transition: all 0.2s ease;
 }
+.css-pncr0q:hover{
+    background-color: black !important;
+    color: white !important;
+    transition: 0.22s ease-in;
+}

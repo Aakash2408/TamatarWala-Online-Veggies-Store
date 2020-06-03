@@ -1,14 +1,15 @@
-import React, { Component} from "react";
+import React, { useEffect} from "react";
 // import "./css/header.css"
+import { Link } from 'react-router-dom';
 
-
+import {connect} from 'react-redux';
 
 import "./css/Header.css";
+import PropTypes from 'prop-types';
 
 // import { fetchProducts } from "../helpers/products.helpers";
-class header extends Component{
-render(){
-
+function Navbar (props){
+  
     return (
       
     <div className="main">  
@@ -43,6 +44,13 @@ render(){
                       <input type="text" value="" placeholder="What Are You Looking For?" autocomplete="off" />
                   </label>
               </div>
+              
+
+              
+              {/* <div> <icon-icon name="basket"></icon-icon> Cart<span>0</span></div> */}
+            </div>
+            <div class="css-lx4zgw">
+             Cart <span className="badge badge-light">{props.cartCount}</span>
             </div>
           </div>
         </div>
@@ -52,12 +60,19 @@ render(){
 
 
     );
-  }
+  
 }
+Navbar.propTypes = {
+    cartCount: PropTypes.number
+};
+
 // const mapStateToProps = (state) => {
 //   return {
 //     badgeValue: state.user.cartCount,
 //   };
 // };
-
-export default header;
+const mapStateToProps = state => ({
+  basketProps:state.basketState
+})
+export default (Navbar);
+ 
