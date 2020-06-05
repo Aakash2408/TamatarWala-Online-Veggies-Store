@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 
 const cartProductTotals = (props) => {
 
-    let currencyKeys = Object.keys(props.currency);
-    let currencyName = props.currency[currencyKeys[1]];
+    // let currencyKeys = Object.keys(props.currency);
+    // let currencyName = props.currency[currencyKeys[1]];
 
     let subtotal = props.subtotal;
     let vatPercentage = props.vat > 0 ? props.vat/100 : 0;
@@ -19,16 +19,16 @@ const cartProductTotals = (props) => {
                     Subtotal
                 </div>
                 <div className="col-6 col-sm-3 text-right shop-cart-amounts">
-                    <span style={{textTransform:'lowercase'}}>{currencyName}</span>{subtotal.toLocaleString()}
+                  Rs.{subtotal.toLocaleString()}
                 </div>
             </div>
             <hr/>
             <div className="row">
                 <div className="col-6 col-sm-4 offset-sm-5 text-left shop-cart-amounts">
-                    VAT
+                    Tax
                 </div>
                 <div className="col-6 col-sm-3 text-right shop-cart-amounts">
-                    <span style={{textTransform:'lowercase'}}>{currencyName}</span>{vat.toLocaleString()}
+                   Rs.{vat.toLocaleString()}
                 </div>
             </div>
             <hr/>
@@ -38,7 +38,7 @@ const cartProductTotals = (props) => {
                 </div>
                 <div className="col-6 col-sm-3 text-right">
                     <h4 className={'shop-cart-total'}>
-                       <span style={{textTransform:'capitalize'}}>{currencyName}</span>{totalCost.toLocaleString()}
+                       Rs.{totalCost.toLocaleString()}
                     </h4>
                 </div>
             </div>
@@ -61,7 +61,7 @@ cartProductTotals.propTypes = {
     subtotal: PropTypes.number.isRequired,
     clearCart: PropTypes.func.isRequired,
     vat: PropTypes.number,
-    currency: PropTypes.object.isRequired
+    
 };
 
 cartProductTotals.defaultProps = {

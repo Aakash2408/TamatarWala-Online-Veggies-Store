@@ -12,7 +12,7 @@ import PaymentOptions from '../../components/Checkout/Forms/Payments/PaymentOpti
 import Alert from '../../components/UI/Alert/Alert';
 import PropTypes from 'prop-types';
 import formValidator from '../../Utility/formValidation';
-import {CardElement, injectStripe} from 'react-stripe-elements';
+// import {CardElement, injectStripe} from 'react-stripe-elements';
 
 class Checkout extends Component {
 
@@ -44,6 +44,13 @@ class Checkout extends Component {
                 valid: false,
                 touched: false,
                 errorsMsg: '',
+            },
+            mobile:{
+                value:'',
+                valid:false,
+                touched:false,
+                errorsMsg:'',
+
             }
         },
     };
@@ -154,15 +161,15 @@ class Checkout extends Component {
 
         let productsPrices = [];
         let chosenPaymentMethod = null;
-        let currencyKeys = Object.keys(this.props.usedCurrencyProp);
-        let currencyValue = this.props.usedCurrencyProp[currencyKeys[0]];
+        // let currencyKeys = Object.keys(this.props.usedCurrencyProp);
+        // let currencyValue = this.props.usedCurrencyProp[currencyKeys[0]];
 
         const cartProducts = this.props.cartProductsProps.map((cartProduct, index) => {
             // fetch product information from source based on id
             let productFromStore = this.props.productsProps.find(product => product.id === cartProduct.id);
             productsPrices.push({
                 price: productFromStore.quantity > 0 ?
-                    Math.round(productFromStore.price * currencyValue) : 0, count:
+                    Math.round(productFromStore.price ) : 0, count:
                 cartProduct.count
             });
             return (
@@ -170,7 +177,7 @@ class Checkout extends Component {
                     key={index}
                     checkoutProductName={productFromStore.name}
                     checkoutProductCategory={productFromStore.category}
-                    checkoutProductPrice={Math.round(productFromStore.price * currencyValue)}
+                    checkoutProductPrice={Math.round(productFromStore.price )}
                     checkoutProductImage={productFromStore.img}
                     checkoutCartCount={cartProduct.count}
                     currency={this.props.usedCurrencyProp}
@@ -178,7 +185,7 @@ class Checkout extends Component {
             )
         });
 
-        let shippingPrice = this.state.shippingPrice ? Math.round(this.state.shippingPrice * currencyValue) : 0;
+        let shippingPrice = this.state.shippingPrice ? Math.round(this.state.shippingPrice ) : 0;
         let productTotals = productsPrices.reduce((acc, el) => acc + (el.price * el.count), 0);
         let vatPercentage = this.props.vatProps > 0 ? this.props.vatProps / 100 : 0;
         let vat = productTotals > 0 ? Math.round(productTotals * vatPercentage) : 0;
@@ -189,7 +196,7 @@ class Checkout extends Component {
         if (this.state.paymentMethod === "creditCard") {
             chosenPaymentMethod =
                 <div className={'ml-4 p-3 shop-card-field'}>
-                    <CardElement onChange={(element) => this.creditCardHandler(element)}/>
+                    {/* <CardElement onChange={(element) => this.creditCardHandler(element)}/> */}
                 </div>
         } else if (this.state.paymentMethod === "onDelivery") {
             chosenPaymentMethod =
@@ -323,4 +330,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 };
 
 // inject stripe prop into the component
-export default connect(mapStateToProps, mapDispatchToProps)(injectStripe(Checkout));
+export default connect(mapStateToProps, mapDispatchToProps)(Checkout);

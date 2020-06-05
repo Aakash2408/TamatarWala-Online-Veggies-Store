@@ -1,29 +1,19 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import HeroBanner from './HeroBanner.jsx';
-import Immunity from './ImmunityBoosters.jsx';
-// import cards from './cards';
-import FooterCards from './footerBanner.js';
-import FooterCards2 from './footerBanner2.js';
-
-import {addToCart} from '../../store/actions/shop';
-import ProductCard from '../../components/ProductCard';
+import {addToCart} from "../../store/actions/shop";
+import ProductCard from "../../components/ProductCard";
 import SecondaryLayout from "../../Layouts/SecondaryLayout";
 import EmptyCategoryPageContent from  '../../components/EmptyCategoryPageContent';
-import '../../components/css/Vegetables.css';
-class Index extends Component {
-
+import '../../components/css/Herbs.css';
+class Children extends Component {
     render() {
-
         let products = <EmptyCategoryPageContent />;
 
-        if (this.props.productsProps) {
-            products = this.props.productsProps.map(product => {
-                
-                
+        if (this.props.productsProps.length > 0) {
+            products = this.props.productsProps
+                .map(product => {
                 return (
-                     
                     <ProductCard
                         key={product.id}
                         productName={product.name}
@@ -34,54 +24,52 @@ class Index extends Component {
                         productCategory={product.category}
                         productQuantity={product.quantity}
                         currency={this.props.usedCurrencyProp}
-                        addToCart={() => this.props.addProductToCartProp(product.id, product.quantity)}
-
+                        addToCart={() => this.props.addProductToCartProp(product.id)}
                     />
-                    
-                    
                 )
             })
         }
-        return (
-            <div>
-            <HeroBanner/>
-             <Immunity/>
-            <FooterCards2/>
-            <FooterCards/>
-            {/* <cards/> */}
-            <div className="css-11zk6ke">
+        return (<div className="css-11zk6ke">
+         <section className="herbs">
+       <header className="css-1wu2h8j">
+        <h1>
+          Herbs
+        </h1>
+    </header>
+     </section>  
+            
             <div id="category" className="css-vz0s8c">
                <div className="main">
        <div className="content">
        <div className="products">
                 {products}
-                </div>
+             
                 </div>
                 </div>
                 </div>
             
             </div>
-            </div>
+        </div>
         )
     }
 }
 
 const mapStateToProps = state => {
     return {
-        productsProps: state.products.filter(product => product.category === 'vegetables'),
+        productsProps: state.products.filter( product => product.category === 'Herbs'),
         usedCurrencyProp: state.usedCurrency
     }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        addProductToCartProp: (productId, productQuantity) => dispatch(addToCart(productId, productQuantity))
+        addProductToCartProp: (productId) => dispatch(addToCart(productId))
     }
 };
 
-Index.propTypes = {
+Children.propTypes = {
     productsProps: PropTypes.array.isRequired,
     usedCurrencyProp: PropTypes.object.isRequired
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Index);
+export default connect(mapStateToProps, mapDispatchToProps)(Children);

@@ -16,8 +16,7 @@ class Cart extends Component {
     render() {
 
         let cartContent = null;
-        let currencyKeys = Object.keys(this.props.usedCurrencyProp);
-        let currencyValue = this.props.usedCurrencyProp[currencyKeys[0]];
+      
 
         if (this.props.cartTotalProp > 0) {
             let cartPriceCountArray = [];
@@ -28,7 +27,7 @@ class Cart extends Component {
                     let productFromStore = this.props.productProps.find(product => product.id === productInCart.id);
                     cartPriceCountArray.push({
                             price: productFromStore.quantity > 0 ?
-                                Math.round(productFromStore.price * currencyValue) : 0,
+                                Math.round(productFromStore.price ) : 0,
                             count: productInCart.count
                         }
                     );
@@ -38,7 +37,7 @@ class Cart extends Component {
                             productName={productFromStore.name}
                             productCategory={productFromStore.category}
                             productPhoto={productFromStore.img}
-                            productPrice={Math.round(productFromStore.price * currencyValue)}
+                            productPrice={Math.round(productFromStore.price)}
                             productCount={productInCart.count}
                             productQuantity={productFromStore.quantity}
                             updateProductCount={(event) => this.productCountHandler(event.target.value, productInCart.id)}

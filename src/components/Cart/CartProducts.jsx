@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 const cartProducts = (props) => {
 
-    let currencyKeys = Object.keys(props.currency);
-    let currencyName = props.currency[currencyKeys[1]];
+    // let currencyKeys = Object.keys(props.currency);
+    // let currencyName = props.currency[currencyKeys[1]];
 
     return (
         <React.Fragment>
@@ -13,8 +13,8 @@ const cartProducts = (props) => {
                     <div className="row">
                         <div className="col-md-2 shop-cart-image-div">
                             <img className={'shop-cart-image'}
-                                 src={require(`../../assets/images/shop_images/${props.productPhoto}`)}
-                                 alt={props.productPhoto.split('.')[0]}/>
+                                 src={props.productPhoto}
+                                 />
                         </div>
                         <div className="col-sm-5 col-md-4 shop-cart-product-details">
                             <h5 className="shop-cart-name text-capitalize">{props.productName}</h5>
@@ -32,7 +32,7 @@ const cartProducts = (props) => {
                             <div className="row">
                                 <div className="col-sm-6 text-left">
                                     <h6 className={'shop-cart-item-price'}>
-                                        <span style={{textTransform:'capitalize'}}>{currencyName}</span>
+                                       Rs.
                                          {props.productPrice.toLocaleString()}
                                         </h6>
                                     <select
@@ -46,7 +46,7 @@ const cartProducts = (props) => {
                                         ))}
                                     </select>
                                     <h6 className={'shop-cart-item-total'}>Total
-                                       <span style={{textTransform:'capitalize'}}> {currencyName}</span>
+                                    Rs.
                                         <span>{props.productPrice * props.productCount.toLocaleString()}</span>
                                     </h6>
                                 </div>
@@ -74,7 +74,7 @@ cartProducts.propTypes = {
     updateProductCount: PropTypes.func.isRequired,
     productQuantity: PropTypes.number.isRequired,
     removeCartProduct: PropTypes.func.isRequired,
-    currency: PropTypes.object.isRequired
+   
 };
 
 export default cartProducts;
