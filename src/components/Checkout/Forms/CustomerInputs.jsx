@@ -24,7 +24,7 @@ const customerInputs = (props) => {
                     changed={(event) => props.inputChanged(event, 'secondName')}/>
                 </div>
             </div>
-
+            <div className="row">
             <div className="col-md-6 mb-3">
                 <InputField
                     label={'Email'}
@@ -42,6 +42,7 @@ const customerInputs = (props) => {
                     identifier={props.customerInfo.mobile}
                     changed={(event) => props.inputChanged(event, 'mobile')}/>
 
+            </div>
             </div>
         </React.Fragment>
     )

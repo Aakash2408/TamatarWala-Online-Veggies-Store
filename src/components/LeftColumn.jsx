@@ -1,6 +1,6 @@
 import React from 'react';
 import PromoCodes from './PromoCodes';
-import CurrencyConverter from './CurrencyConverter';
+
 
 const leftColumn = () => {
     return (
@@ -14,8 +14,7 @@ const leftColumn = () => {
             </PromoCodes>
             <hr/>
             <div>
-                <CurrencyConverter
-                showLabel/>
+                
             </div>
             <hr/>
             <div>

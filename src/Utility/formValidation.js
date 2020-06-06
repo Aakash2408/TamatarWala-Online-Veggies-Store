@@ -32,6 +32,21 @@ export default function (identifier, value) {
             }
             break;
 
+        case('mobile'):
+            if (value.trim() === '' && isValid) {
+                isValid = false;
+                errMsg = 'Moile must be a number';
+            // } else if (!value.match(/^[a-zA-Z]*$/) && isValid) {
+            //     isValid = false;
+            //     errMsg = 'Name must be letters only';
+            } else if (value.length < 10 && isValid) {
+                isValid = false;
+                errMsg = 'Mobile must be of 10 numbers long';
+            }
+            break;
+        
+        
+
         default:
 
     }
