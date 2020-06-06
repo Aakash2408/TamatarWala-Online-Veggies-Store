@@ -78,9 +78,9 @@ const initialState = {
       name:'Garlic 100g',
       img:'https://www.freepngimg.com/thumb/garlic/2-2-garlic-transparent-thumb.png',
       price:20,
-      category:'vegetables',
+      category:'Immunity',
       quantity:10,
-      article:'vegetables'
+      article:'Immunity'
 
     },
      {id:24,

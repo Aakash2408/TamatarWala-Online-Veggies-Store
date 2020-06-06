@@ -6,9 +6,29 @@ import CartProduct from '../../components/Cart/CartProducts';
 import CartProductTotals from '../../components/Cart/CartProductTotals';
 import OrderSuccess from '../../components/OrderSuccess';
 import PropTypes from 'prop-types';
+import firebase from "firebase";
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 
 class Cart extends Component {
+    state = { isSignedIn: false }
+  uiConfig = {
+    signInFlow: "popup",
+    signInOptions: [
+      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+      firebase.auth.EmailAuthProvider.PROVIDER_ID,
+      firebase.auth.PhoneAuthProvider.PROVIDER_ID
+    ],
+    callbacks: {
+      signInSuccess: () => false
+    }
+  }
 
+  componentDidMount = () => {
+    firebase.auth().onAuthStateChanged(user => {
+      this.setState({ isSignedIn: !!user })
+      console.log("user", user)
+    })
+  }   
     productCountHandler = (field_value, product_id) => {
         this.props.updateCartProductCountProp(field_value, product_id)
     };
@@ -55,7 +75,9 @@ class Cart extends Component {
             />;
 
             cartContent = (
+                
                 <React.Fragment>
+                
                     {cartProducts}
                     {cartTotals}
                 </React.Fragment>
@@ -68,12 +90,20 @@ class Cart extends Component {
             </h5>;
         }
 
-        return (
+        return (<div>
+            {this.state.isSignedIn ?(
             <div className="container shop-container py-4">
                 <div className={'p-4 shop-div'}>
                     {cartContent}
                 </div>
-            </div>
+            </div>):(
+                <StyledFirebaseAuth 
+                uiConfig={this.uiConfig}
+                firebaseAuth={firebase.auth()}/>
+                
+            )
+            }
+        </div>
         )
     }
 }
