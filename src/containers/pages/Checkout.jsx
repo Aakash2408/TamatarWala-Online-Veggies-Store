@@ -93,7 +93,8 @@ class Checkout extends Component {
         order['user'] = {
             firstName: this.state.customerInfo.firstName.value,
             secondName: this.state.customerInfo.secondName.value,
-            email: this.state.customerInfo.email.value
+            email: this.state.customerInfo.email.value,
+            mobile:this.state.customerInfo.mobile.value
         };
         order['usedPromoCode'] = this.state.promoCode;
         order['currency'] = this.props.usedCurrencyProp;
