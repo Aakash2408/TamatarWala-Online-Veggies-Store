@@ -7,7 +7,7 @@
     "-": "0.0.1",
     "bootstrap": "^4.5.0",
     "firebase": "^7.15.0",
-    "jquery": "^1.9.1",
+    "jquery": "^3.5.0",
     "mdbreact": "^4.27.0",
     "prop-types": "15.6.2",
     "react": "^16.8.0",
