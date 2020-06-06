@@ -2,7 +2,7 @@
     text-align: center !important;
     margin-left: auto;
 } */
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 @media screen and (max-width: 768px){
 
     .card-image{
@@ -19,7 +19,14 @@
 
 
 }
-
+.css-fqak9j {
+    box-sizing: border-box;
+    margin: 0;
+    min-width: 0;
+    font-family: Poppins,serif;
+    font-weight: 700;
+    line-height: initial;
+}
     
 
 
@@ -28,6 +35,7 @@
 display: block;           
  width: 100%;
 height: 100%;
+border-radius: 10px;
  background: linear-gradient(to right,rgba(0,0,0,0.7) ,rgba(0,0,0,0.6));
  position: absolute;
 top: 0;

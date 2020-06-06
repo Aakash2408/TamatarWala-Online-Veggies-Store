@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import HeroBanner from './HeroBanner.jsx';
 import Immunity from './ImmunityBoosters.jsx';
-// import cards from './cards';
+import Cards from './cards';
 import FooterCards from './footerBanner.js';
 import FooterCards2 from './footerBanner2.js';
 
@@ -45,13 +45,15 @@ class Index extends Component {
         return (
             <div>
             <HeroBanner/>
+            <Cards/>
              <Immunity/>
+            
             <FooterCards2/>
-            <FooterCards/>
             {/* <cards/> */}
             <div className="css-11zk6ke">
             <div id="category" className="css-vz0s8c">
                <div className="main">
+                    <div class="css-oh3fg6"><h3 class="css-fqak9j">Featured Products</h3></div>
        <div className="content">
        <div className="products">
                 {products}
@@ -61,7 +63,9 @@ class Index extends Component {
                 </div>
             
             </div>
+            <FooterCards/>
             </div>
+            
         )
     }
 }
