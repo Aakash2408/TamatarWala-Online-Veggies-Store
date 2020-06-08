@@ -97,10 +97,11 @@ class Cart extends Component {
                     {cartContent}
                 </div>
             </div>):(
+                <div>
                 <StyledFirebaseAuth 
                 uiConfig={this.uiConfig}
                 firebaseAuth={firebase.auth()}/>
-                
+                </div>
             )
             }
         </div>

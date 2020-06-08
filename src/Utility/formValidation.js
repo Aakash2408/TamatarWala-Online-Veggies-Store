@@ -35,7 +35,7 @@ export default function (identifier, value) {
         case('mobile'):
             if (value.trim() === '' && isValid) {
                 isValid = false;
-                errMsg = 'Moile must be a number';
+                errMsg = 'Mobile must be a number';
             // } else if (!value.match(/^[a-zA-Z]*$/) && isValid) {
             //     isValid = false;
             //     errMsg = 'Name must be letters only';
