@@ -35,17 +35,24 @@ export default function (identifier, value) {
         case('mobile'):
             if (value.trim() === '' && isValid) {
                 isValid = false;
-                errMsg = 'Mobile must be a number';
-            // } else if (!value.match(/^[a-zA-Z]*$/) && isValid) {
-            //     isValid = false;
-            //     errMsg = 'Name must be letters only';
+           
             } else if (value.length < 10 && isValid) {
                 isValid = false;
                 errMsg = 'Mobile must be of 10 numbers long';
             }
             break;
-        
-        
+        case('address'):
+                    if (value.trim() === '' && isValid) {
+                isValid = false;
+                errMsg = 'address can be text plus digits';}
+        //     else if (!value.match(/^[a-zA-Z]*$/) && isValid) {
+        //     //     isValid = false;
+        //     //     errMsg = 'Name must be letters only';
+        //     } else if (value.length > 100 && isValid) {
+        //         isValid = false;
+        //         errMsg = 'Address must be inside 100 characters';
+        //     }
+            break;
 
         default:
 

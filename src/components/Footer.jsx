@@ -4,11 +4,7 @@ const footer = () => {
     return(
         <React.Fragment>
             <div >
-                {/* made with Love by
-                <a target={'blank'} href={'http://collinsnick.com/'}> Collins nixon</a>
-                .This project is open source, visit
-                <a target={'blank'} href={'https://github.com/collinsNick/React-redux-shopping-web-app'}> the repo</a> */}
-
+               
             </div>
         </React.Fragment>
     )

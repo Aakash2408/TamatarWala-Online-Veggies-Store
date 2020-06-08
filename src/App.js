@@ -9,7 +9,7 @@ import Fruits from './containers/pages/Fruits';
 import Herbs from './containers/pages/Herbs';
 import Sale from './containers/pages/Sale';
 import Cart from './containers/pages/Cart';
-import Footer from './containers/pages/footer';
+import footer from './containers/pages/footer';
 import Checkout from './containers/pages/Checkout';
 import firebase from "firebase";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
@@ -64,7 +64,6 @@ class App extends Component {false
                         {/*always redirect to index*/}
                         <Redirect to={'/'}/>
                     </Switch>
-                    <Footer/>
                 </MainLayout>
                 </div>
                  

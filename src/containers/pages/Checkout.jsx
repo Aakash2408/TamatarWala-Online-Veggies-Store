@@ -51,6 +51,12 @@ class Checkout extends Component {
                 touched:false,
                 errorsMsg:'',
 
+            },
+            address:{
+                 value:'',
+                valid:false,
+                touched:false,
+                errorsMsg:'',
             }
         },
     };
@@ -94,7 +100,8 @@ class Checkout extends Component {
             firstName: this.state.customerInfo.firstName.value,
             secondName: this.state.customerInfo.secondName.value,
             email: this.state.customerInfo.email.value,
-            mobile:this.state.customerInfo.mobile.value
+            mobile:this.state.customerInfo.mobile.value,
+            address:this.state.customerInfo.address.value
         };
         order['usedPromoCode'] = this.state.promoCode;
         order['currency'] = this.props.usedCurrencyProp;
