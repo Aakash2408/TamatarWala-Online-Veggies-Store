@@ -48,7 +48,7 @@ class Index extends Component {
             <Cards/>
              <Immunity/>
             
-            <FooterCards2/>
+            
             {/* <cards/> */}
             <div className="css-11zk6ke">
             <div id="category" className="css-vz0s8c">
@@ -63,6 +63,7 @@ class Index extends Component {
                 </div>
             
             </div>
+            <FooterCards2/>
             <FooterCards/>
             </div>
             
