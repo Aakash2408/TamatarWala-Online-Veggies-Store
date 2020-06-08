@@ -43,7 +43,20 @@ const customerInputs = (props) => {
                     changed={(event) => props.inputChanged(event, 'mobile')}/>
 
             </div>
+            
             </div>
+             <div className="mb-3">
+               <InputField
+                    label={'Address'}
+                    type={'text'}
+                    placeholder={''}
+                    identifier={props.customerInfo.address}
+                    changed={(event) => props.inputChanged(event, 'address')}/>
+
+            </div>
+
+        
+             
         </React.Fragment>
     )
 };
