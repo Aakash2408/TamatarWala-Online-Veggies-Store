@@ -6,7 +6,7 @@ import Immunity from './ImmunityBoosters.jsx';
 import Cards from './cards';
 import FooterCards from './footerBanner.js';
 import FooterCards2 from './footerBanner2.js';
-
+import Footer from './footer.js'
 import {addToCart} from '../../store/actions/shop';
 import ProductCard from '../../components/ProductCard';
 import SecondaryLayout from "../../Layouts/SecondaryLayout";
@@ -65,6 +65,7 @@ class Index extends Component {
             </div>
             <FooterCards2/>
             <FooterCards/>
+            <Footer/>
             </div>
             
         )

@@ -7,7 +7,7 @@ class footer extends Component {
                <footer className="css-18v463v">
                <div className="css-1ancu1t">
                <div className="copyright css-1a40wnc">
-               <p>Copyright © 2020 <a href="https://redq.io" target="_blank" rel="noopener">Redq, Inc</a> , All rights reserved</p>
+               <p>Copyright © 2020 <a href="/" target="_blank" rel="noopener">Tamatarwala</a> , All rights reserved</p>
                </div>
                </div>
                </footer>
