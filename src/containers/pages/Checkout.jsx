@@ -22,7 +22,7 @@ class Checkout extends Component {
         alertType: '',
         alertMessage: '',
         paymentMethod: "creditCard",
-        shippingPrice: 300,
+        shippingPrice: 50,
         usedDeliveryOption: 1,
         makeOrder: false,
         correctCardInfo: false,
