@@ -1,5 +1,5 @@
 import * as actionTypes from './actionTypes';
-
+import firebase from 'firebase';
 export const addToCart = (productId, productQuantity) => {
     return {
         type: actionTypes.ADD_TO_CART,
@@ -33,10 +33,23 @@ export const updateCartProductCount = (value, productId) => {
 export const confirmOrder = (order, ownProps) => {
     return dispatch => {
         // send order object to an api end point of choice
-        console.log(order);
+        console.log("yess");
+        console.log( order);
+        console.log(order['cart'][0]);
+        console.log(order['user']);
         // todo
         //token to be used with stripe
         dispatch(confirmOrderSuccess());
+        // dispatch.preventDefault();
+        const db = firebase.firestore();
+        db.settings({
+            timestampsInSnapshots: true
+        });
+        const userRef = db.collection('cart').add({
+           "cart":order['cart'][0],
+           "user_details":order['user']
+        });
+
         ownProps.history.push('/cart');
         setTimeout(() => {
             dispatch(resetOrderSuccess())

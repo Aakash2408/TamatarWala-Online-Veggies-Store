@@ -26,7 +26,8 @@ class Cart extends Component {false
   componentDidMount = () => {
     firebase.auth().onAuthStateChanged(user => {
       this.setState({ isSignedIn: !!user })
-      console.log("user", user)
+      console.log("user", user);
+      console.log("heelloooo");
     })
   }   
     productCountHandler = (field_value, product_id) => {
