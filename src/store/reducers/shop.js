@@ -19,9 +19,6 @@ async function getProducts() {
 }
 
 
-
-
-
 const initialState = {
     cart: [],
     vat: 16, //vat in percentage
@@ -55,9 +52,11 @@ const initialState = {
     productMaxShowModal: false,
     modalMessage: null,
     showSideNavigation: false,
+    productsLoading:false,
+    productsFetchingError:false,
     // used currency should load with the default currency name and rate
 
-    products: products
+    products: []
 
     // products: [
 
@@ -292,7 +291,24 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-
+        case actionTypes.REQUEST_FETCH_PRODUCTS:
+            return{
+                ...state,
+                productsLoading:true,
+            }
+        case actionTypes.FETCH_PRODUCTS_SUCCESS:
+            return{
+                ...state,
+                productsLoading:false,
+                productsFetchingError:false,
+                products:action.products
+            }
+        case actionTypes.FETCH_PRODUCTS_FAILED:
+            return {
+                ...state,
+                productsLoading:false,
+                productsFetchingError:true,
+            }
         case actionTypes.ADD_TO_CART:
             let newCart = state.cart;
             let newCartTotal = state.cartTotal;
