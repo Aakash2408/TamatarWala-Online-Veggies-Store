@@ -11,8 +11,10 @@ import Sale from './containers/pages/Sale';
 import Cart from './containers/pages/Cart';
 import footer from './containers/pages/footer';
 import Checkout from './containers/pages/Checkout';
+import {fetchProducts} from './store/actions/shop'
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import './App.css';
+import { bindActionCreators } from 'redux';
 
 
 
@@ -37,6 +39,9 @@ class App extends Component {
     //       console.log("user", user)
     //     })
     //   }   
+    componentDidMount(){
+        this.props.fetchProducts();
+    }
     render() {
         return (
             <div className="App">
@@ -84,7 +89,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         closeModalProp: () => dispatch(closeMaxProductModal()),
-        toggleSideBarProp: () => dispatch(toogleSideBar())
+        toggleSideBarProp: () => dispatch(toogleSideBar()),
+        fetchProducts:()=>dispatch(fetchProducts())
     }
 };
 

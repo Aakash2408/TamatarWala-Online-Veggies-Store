@@ -8,6 +8,42 @@ export const addToCart = (productId, productQuantity) => {
     }
 };
 
+export const requestProducts=()=>{
+    return {
+        type:actionTypes.REQUEST_FETCH_PRODUCTS
+    }
+}
+
+export const fetchProductsSuccess = (products)=>{
+    return {
+        type:actionTypes.FETCH_PRODUCTS_SUCCESS,
+        products:products
+    }
+}
+
+export const fetchProductsFailed = (error)=>{
+    return{
+        type:actionTypes.FETCH_PRODUCTS_FAILED,
+        error:error
+    }
+}
+
+export function fetchProducts(){
+    return (dispatch)=>{
+        dispatch(requestProducts());
+        const db = firebase.firestore();
+        return db.collection("products")
+            .get()
+            .then(querySnapshot => {
+                // this is the data fetched from firebase
+                const data = querySnapshot.docs.map(doc => doc.data());
+                dispatch(fetchProductsSuccess(data));
+            }).catch((err)=>{
+                dispatch(fetchProductsFailed(err));
+            })
+    }
+}
+
 export const removeFromCart = (productId, count) => {
     return {
         type: actionTypes.REMOVE_FROM_CART,
