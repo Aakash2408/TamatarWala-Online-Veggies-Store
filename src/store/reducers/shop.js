@@ -1,17 +1,25 @@
 import * as actionTypes from '../actions/actionTypes';
 import firebase from './firebase'
-var products = [];
+
+async function getProducts() {
+    return new Promise((resolve, reject) => {
+        const db = firebase.firestore();
+        db.collection("products")
+            .get()
+            .then(querySnapshot => {
+                // this is the data fetched from firebase
+                const data = querySnapshot.docs.map(doc => doc.data());
+                resolve(data);
+            }).catch((err)=>{
+                reject(err);
+            })
+
+    })
+
+}
 
 
-const db = firebase.firestore();
-db.collection("products")
-    .get()
-    .then(querySnapshot => {
-        // this is the data fetched from firebase
-        const data = querySnapshot.docs.map(doc => doc.data());  
-        products = data;
-        alert(JSON.stringify(products))
-    });
+
 
 
 const initialState = {
