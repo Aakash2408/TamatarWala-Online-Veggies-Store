@@ -36,7 +36,7 @@ export default function (identifier, value) {
             if (value.trim() === '' && isValid) {
                 isValid = false;
            
-            } else if (value.length < 10 && isValid) {
+            } else if (value.length < 10 || value.length >10 && isValid) {
                 isValid = false;
                 errMsg = 'Mobile must be of 10 numbers long';
             }

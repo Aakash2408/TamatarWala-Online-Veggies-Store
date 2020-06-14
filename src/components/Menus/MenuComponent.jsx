@@ -25,7 +25,7 @@ const menuComponent = (props) => {
             </MenuItem>
            
            
- <MenuItem linkTo={'/'} onClick={()=>firebase.auth().signOut()}>SignOut</MenuItem>
+ {/* <MenuItem linkTo={'/'} onClick={()=>firebase.auth().signOut()}>SignOut</MenuItem> */}
      
 
         </React.Fragment>

@@ -43,6 +43,7 @@ class Orders extends Component {false
                         <OrderList
                             orderPrice={Math.round(order.price)}
                             orderId={order.doc_id}
+                            date={order.date}
                             hist={this.props.history}
                             currency={this.props.usedCurrencyProp}
                             
