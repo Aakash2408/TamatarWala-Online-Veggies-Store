@@ -54,6 +54,10 @@ const initialState = {
     showSideNavigation: false,
     productsLoading:false,
     productsFetchingError:false,
+    ordersLoading:false,
+    orders:[],
+    totalCartPrice:0,
+    ordersFetchingError:false,
     // used currency should load with the default currency name and rate
 
     products: []
@@ -320,6 +324,7 @@ const reducer = (state = initialState, action) => {
                 modalMessage = 'Sorry! This product is out of stock'
             } else {
                 let chkProductInCart = state.cart.find(product => product.id === action.productId);
+                let productInStore = state.products.find(product=>product.id===action.productId)
                 if (chkProductInCart) {
                     if (chkProductInCart.count < action.productQuantity) {
                         newCart = state.cart.map(
@@ -332,7 +337,7 @@ const reducer = (state = initialState, action) => {
                         modalMessage = 'Sorry! Your product order cannot exceed our stock.'
                     }
                 } else {
-                    newCart = state.cart.concat({ id: action.productId, count: 1 });
+                    newCart = state.cart.concat({ id: action.productId, count: 1,productName: productInStore.name});
                     newCartTotal = state.cartTotal + 1
                 }
             }
@@ -441,7 +446,26 @@ const reducer = (state = initialState, action) => {
                 usedCurrency: currencyNameSearch ? currencyObj : this.state.usedCurrency
             }
         }
-
+        case actionTypes.REQUEST_FETCH_ORDERS:
+            return {
+                ...state,
+                ordersLoading:true,
+                ordersFetchingError:false
+            }
+        case actionTypes.FETCH_ORDERS_SUCCESS:
+            return{
+                ...state,
+                orders:action.orders,
+                ordersLoading:false,
+                ordersFetchingError:false
+            }
+        case actionTypes.FETCH_ORDERS_FAILED:
+            return{
+                ...state,
+                orders:[],
+                ordersLoading:false,
+                ordersFetchingError:true
+            }
         default:
             return {
                 ...state,

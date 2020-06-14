@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { closeMaxProductModal, toogleSideBar } from './store/actions/shop'
+import { closeMaxProductModal, toogleSideBar, fetchOrders } from './store/actions/shop'
 import MainLayout from './Layouts/MainLayout';
 import Homepage from './containers/pages/Index';
 import Vegetables from './containers/pages/Vegetables';
@@ -14,9 +14,8 @@ import Checkout from './containers/pages/Checkout';
 import {fetchProducts} from './store/actions/shop'
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import './App.css';
-import { bindActionCreators } from 'redux';
-
-
+import SpecificOrder from './containers/pages/SpecificOrder';
+import Orders from './containers/pages/Orders';
 
 class App extends Component {
     // false
@@ -41,6 +40,7 @@ class App extends Component {
     //   }   
     componentDidMount(){
         this.props.fetchProducts();
+        this.props.fetchOrders();
     }
     render() {
         return (
@@ -60,7 +60,8 @@ class App extends Component {
                             <Route path={'/vegetables'} component={Vegetables} />
                             <Route path={'/fruits'} component={Fruits} />
                             <Route path={'/herbs'} component={Herbs} />
-
+                            <Route path={'/orders/:order_id'} component={SpecificOrder} />
+                            <Route path={'/orders'} component={Orders} />
                             <Route path={'/cart'} component={Cart} />
                             <Route path={'/checkout'} component={Checkout} />
                             {/*always redirect to index*/}
@@ -90,7 +91,8 @@ const mapDispatchToProps = dispatch => {
     return {
         closeModalProp: () => dispatch(closeMaxProductModal()),
         toggleSideBarProp: () => dispatch(toogleSideBar()),
-        fetchProducts:()=>dispatch(fetchProducts())
+        fetchProducts:()=>dispatch(fetchProducts()),
+        fetchOrders:()=>dispatch(fetchOrders())
     }
 };
 
