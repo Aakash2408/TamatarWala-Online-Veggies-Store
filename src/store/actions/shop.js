@@ -8,6 +8,12 @@ export const addToCart = (productId, productQuantity) => {
     }
 };
 
+export const fetchCart = ()=>{
+    return {
+        type:actionTypes.FETCH_CART
+    }
+}
+
 export const requestProducts=()=>{
     return {
         type:actionTypes.REQUEST_FETCH_PRODUCTS

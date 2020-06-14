@@ -2,26 +2,10 @@ import * as actionTypes from '../actions/actionTypes';
 import firebase from './firebase'
 import {reactLocalStorage} from 'reactjs-localstorage';
 
-async function getProducts() {
-    return new Promise((resolve, reject) => {
-        const db = firebase.firestore();
-        db.collection("products")
-            .get()
-            .then(querySnapshot => {
-                // this is the data fetched from firebase
-                const data = querySnapshot.docs.map(doc => doc.data());
-                resolve(data);
-            }).catch((err)=>{
-                reject(err);
-            })
-
-    })
-
-}
 
 
 const initialState = {
-    cart: reactLocalStorage.getObject('cart',[],true),
+    cart: [],
     vat: 16, //vat in percentage
     cartTotal: 0,
     orderSuccess: false,
@@ -80,6 +64,15 @@ const reducer = (state = initialState, action) => {
                 productsFetchingError:false,
                 products:action.products
             }
+        
+        case actionTypes.FETCH_CART:
+             let newCart2 = reactLocalStorage.getObject('cart',[],true);
+            return{
+                ...state,
+                cartTotal: newCart2.length,
+                cart: newCart2,
+            }
+        
         case actionTypes.FETCH_PRODUCTS_FAILED:
             return {
                 ...state,

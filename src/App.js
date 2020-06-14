@@ -11,36 +11,22 @@ import Sale from './containers/pages/Sale';
 import Cart from './containers/pages/Cart';
 import footer from './containers/pages/footer';
 import Checkout from './containers/pages/Checkout';
-import {fetchProducts} from './store/actions/shop'
+import {fetchProducts,fetchCart} from './store/actions/shop'
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import './App.css';
 import SpecificOrder from './containers/pages/SpecificOrder';
 import Orders from './containers/pages/Orders';
 
 class App extends Component {
-    // false
-    //      state = { isSignedIn: false }
-    //   uiConfig = {
-    //     signInFlow: "popup",
-    //     signInOptions: [
-    //       firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-    //       firebase.auth.EmailAuthProvider.PROVIDER_ID,
-    //       firebase.auth.PhoneAuthProvider.PROVIDER_ID
-    //     ],
-    //     callbacks: {
-    //       signInSuccess: () => false
-    //     }
-    //   }
-
-    //   componentDidMount = () => {
-    //     firebase.auth().onAuthStateChanged(user => {
-    //       this.setState({ isSignedIn: !!user })
-    //       console.log("user", user)
-    //     })
-    //   }   
+  
     componentDidMount(){
         this.props.fetchProducts();
         this.props.fetchOrders();
+        setTimeout(()=>{
+            this.props.fetchCart();
+
+        },5000);
+        
     }
     render() {
         return (
@@ -92,7 +78,8 @@ const mapDispatchToProps = dispatch => {
         closeModalProp: () => dispatch(closeMaxProductModal()),
         toggleSideBarProp: () => dispatch(toogleSideBar()),
         fetchProducts:()=>dispatch(fetchProducts()),
-        fetchOrders:()=>dispatch(fetchOrders())
+        fetchOrders:()=>dispatch(fetchOrders()),
+        fetchCart:()=>dispatch(fetchCart())
     }
 };
 
