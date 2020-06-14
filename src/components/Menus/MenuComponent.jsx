@@ -14,12 +14,12 @@ const menuComponent = (props) => {
     return (
         <React.Fragment>
               
-                  
+
             <MenuItem linkTo={'/'}>Home</MenuItem>
             <MenuItem linkTo={'/vegetables'}>Vegetables</MenuItem>
             <MenuItem linkTo={'/Fruits'}>Fruits</MenuItem>
             <MenuItem linkTo={'/Herbs'}>Herbs</MenuItem>
-            
+            <MenuItem linkTo={'/orders'}>Orders</MenuItem>            
             <MenuItem linkTo={'/cart'}>
                 Cart <span className="badge badge-light">{props.cartCount}</span>
             </MenuItem>

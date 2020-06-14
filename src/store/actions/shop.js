@@ -28,6 +28,25 @@ export const fetchProductsFailed = (error)=>{
     }
 }
 
+export const requestOrders=()=>{
+    return {
+        type:actionTypes.REQUEST_FETCH_ORDERS
+    }
+}
+
+export const fetchOrdersSuccess=(orders)=>{
+    return{
+        type:actionTypes.FETCH_ORDERS_SUCCESS,
+        orders:orders
+    }
+}
+
+export const fetchOrdersFailed=()=>{
+    return{
+        type:actionTypes.FETCH_ORDERS_FAILED
+    }
+}
+
 export function fetchProducts(){
     return (dispatch)=>{
         dispatch(requestProducts());
@@ -69,10 +88,10 @@ export const updateCartProductCount = (value, productId) => {
 export const confirmOrder = (order, ownProps) => {
     return dispatch => {
         // send order object to an api end point of choice
-        console.log("yess");
-        console.log( order);
-        console.log(order['cart'][0]);
-        console.log(order['user']);
+        // console.log("yess");
+        // console.log( order);
+        // console.log(order['cart'][0]);
+        // console.log(order['user']);
         // todo
         //token to be used with stripe
         dispatch(confirmOrderSuccess());
@@ -81,17 +100,52 @@ export const confirmOrder = (order, ownProps) => {
         db.settings({
             timestampsInSnapshots: true
         });
-        const userRef = db.collection('cart').add({
-           "cart":order['cart'][0],
-           "user_details":order['user']
-        });
+        const unsubs = firebase.auth().onAuthStateChanged(user=>{
+            if(user){
+                const userRef = db.collection('users').doc(user.uid).collection('orders').add({
+                    "cart":order['cart'],
+                    "price":order['price'],
+                    "user_details":order['user']
+                 }).then(()=>{
+                     dispatch(confirmOrderSuccess());
+                     dispatch(fetchOrders());
+                 });
+            }else{
+                dispatch(confirmOrderFailure())
+                ownProps.history.push('/cart');                
+            }
+        })
+
 
         ownProps.history.push('/cart');
+
         setTimeout(() => {
+            
             dispatch(resetOrderSuccess())
         }, 5000)
     }
 };
+
+export function fetchOrders(){
+    return dispatch=>{
+        dispatch(requestOrders());
+        const db = firebase.firestore();
+
+        return firebase.auth().onAuthStateChanged(user=> {
+            
+            if(user){
+                return db.collection('users').doc(user.uid).collection('orders').get().then(res=>{
+                    const data = res.docs.map(doc=>{const d = doc.data(); return{...d,doc_id:doc.id}});
+                    dispatch(fetchOrdersSuccess(data))
+                }).catch(e=>{
+                    dispatch(fetchOrdersFailed())
+                })
+            }
+
+        }) 
+
+    }
+}
 
 export const closeMaxProductModal = () => {
     return {

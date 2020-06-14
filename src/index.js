@@ -4,6 +4,7 @@ import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
 import {createStore, compose, applyMiddleware} from 'redux';
 import {BrowserRouter} from 'react-router-dom';
+import {logger} from 'redux-logger'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
@@ -16,7 +17,7 @@ import shopReducer from './store/reducers/shop';
 // const composeEnhancers = process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null || compose;
 // composeEnhancers prevents using promises in actions, if you find a solution please share
 // const store = createStore(shopReducer, composeEnhancers(applyMiddleware(thunk)));
-const store = createStore(shopReducer, applyMiddleware(thunk));
+const store = createStore(shopReducer, applyMiddleware(thunk,logger));
 
 const app = (
 

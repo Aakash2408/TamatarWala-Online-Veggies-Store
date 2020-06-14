@@ -92,7 +92,7 @@ class Checkout extends Component {
         this.setState({paymentMethod: event.target.value})
     };
 
-    confirmOrderHandler = (event) => {
+    confirmOrderHandler = (event,shoppingTotal) => {
         event.preventDefault();
         let order = {};
         order['cart'] = this.props.cartProductsProps;
@@ -107,7 +107,7 @@ class Checkout extends Component {
         order['currency'] = this.props.usedCurrencyProp;
         order['paymentMethod'] = this.state.paymentMethod;
         order['deliveryOption'] = this.state.usedDeliveryOption;
-
+        order['price'] = shoppingTotal
         // todo
         // create stripe token for payments
         this.props.confirmOrderProp(order)
@@ -291,7 +291,7 @@ class Checkout extends Component {
                             <button
                                 disabled={!(this.state.makeOrder && this.state.correctCardInfo)}
                                 className="btn shop-btn-secondary btn-lg btn-block"
-                                onClick={(event) => this.confirmOrderHandler(event)}>
+                                onClick={(event) => this.confirmOrderHandler(event,shoppingTotal)}>
                                 Confirm Order
                             </button>
                         </form>

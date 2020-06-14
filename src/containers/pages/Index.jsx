@@ -14,9 +14,10 @@ import EmptyCategoryPageContent from  '../../components/EmptyCategoryPageContent
 import '../../components/css/Vegetables.css';
 class Index extends Component {
 
+    
     render() {
 
-        let products = <EmptyCategoryPageContent />;
+        let products = <EmptyCategoryPageContent />
 
         if (this.props.productsProps) {
             products = this.props.productsProps.map(product => {
