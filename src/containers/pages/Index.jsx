@@ -7,7 +7,7 @@ import Cards from './cards';
 import FooterCards from './footerBanner.js';
 import FooterCards2 from './footerBanner2.js';
 import Footer from './footer.js'
-import {addToCart} from '../../store/actions/shop';
+import {addToCart,updateCartProductCount} from '../../store/actions/shop';
 import ProductCard from '../../components/ProductCard';
 import SecondaryLayout from "../../Layouts/SecondaryLayout";
 import EmptyCategoryPageContent from  '../../components/EmptyCategoryPageContent';
@@ -22,9 +22,10 @@ class Index extends Component {
         if (this.props.productsProps) {
             products = this.props.productsProps.map(product => {
                 
+                let productInCart = this.props.cartProductsProp.find(cartProd => product.id === cartProd.id)
                 
                 return (
-                     
+     
                     <ProductCard
                         key={product.id}
                         productName={product.name}
@@ -32,9 +33,13 @@ class Index extends Component {
                         productDiscountPrice={product.discount_price}
                         productSale={product.sale}
                         productImage={product.img}
+                        productCount={productInCart?productInCart.count:0}
                         productCategory={product.category}
                         productQuantity={product.quantity}
+
+                        activeCartProd={this.props.activeCartProd==product.id ? true:false}
                         currency={this.props.usedCurrencyProp}
+                        updateProductCount = {(value)=>this.props.updateCartProductCountProp(value,product.id)}
                         addToCart={() => this.props.addProductToCartProp(product.id, product.quantity)}
 
                     />
@@ -76,13 +81,16 @@ class Index extends Component {
 const mapStateToProps = state => {
     return {
         productsProps: state.products.filter(product => product.category === 'vegetables'),
-        usedCurrencyProp: state.usedCurrency
+        usedCurrencyProp: state.usedCurrency,
+        cartProductsProp:state.cart,
+        activeCartProd:state.activeProduct
     }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        addProductToCartProp: (productId, productQuantity) => dispatch(addToCart(productId, productQuantity))
+        addProductToCartProp: (productId, productQuantity) => dispatch(addToCart(productId, productQuantity)),
+        updateCartProductCountProp: (value, productId) => dispatch(updateCartProductCount(Number(value), productId))
     }
 };
 

@@ -41,6 +41,7 @@ const initialState = {
     productsFetchingError:false,
     ordersLoading:false,
     orders:[],
+    activeProduct:'',
     totalCartPrice:0,
     ordersFetchingError:false,
     // used currency should load with the default currency name and rate
@@ -119,7 +120,8 @@ const reducer = (state = initialState, action) => {
                 cartTotal: newCartTotal,
                 cart: newCart,
                 productMaxShowModal: productMaxShowModal,
-                modalMessage: modalMessage
+                modalMessage: modalMessage,
+                activeProduct:action.productId
             };
 
         case actionTypes.REMOVE_FROM_CART:

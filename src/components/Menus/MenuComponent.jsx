@@ -9,8 +9,7 @@ import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 
 const menuComponent = (props) => {
    
-{this.isSignedIn=false}
-
+    
   
     return (
         <React.Fragment>
