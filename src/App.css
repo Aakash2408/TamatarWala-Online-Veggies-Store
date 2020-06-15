@@ -605,7 +605,7 @@ input[type="radio"] {
 @media screen and (min-width: 768px)
 {
 .css-5ucbon {
-    min-width: 106px;
+    min-width: 16px !important;
     min-height: 36px;
 }}
 .css-5ucbon {
@@ -613,8 +613,8 @@ input[type="radio"] {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
-    min-width: 100px;
-    min-height: 32px;
+    
+    min-height: 22px;
     background-color: rgb(41, 41, 41);
     box-shadow: rgba(0, 0, 0, 0.16) 0px 6px 12px;
     margin: 0px;
@@ -639,44 +639,31 @@ input[type="radio"] {
 }
 .css-110od4n {
     box-sizing: border-box;
-    margin: 0;
-    min-width: 0;
+    margin-left: 10px;
+    
     -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    display: inline-block;
+  
+
     text-align: center;
     line-height: inherit;
-    -webkit-text-decoration: none;
     text-decoration: none;
     font-size: inherit;
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-top: 8px;
-    padding-bottom: 8px;
     color: #ffffff;
     background-color: #292929;
     border: 0;
-    border-radius: 4px;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
+    
     display: flex;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
+    
     align-items: center;
     -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
+  
     justify-content: center;
     cursor: pointer;
-    min-width: 130px;
-    min-height: 40px;
+   
     border-radius: 6px;
     font-weight: 700;
     text-transform: capitalize;
-    -webkit-transition: opacity 0.2s ease;
+   
     transition: opacity 0.2s ease;
 }
 @media screen and (min-width: 768px){
@@ -691,26 +678,27 @@ input[type="radio"] {
 }
 @media screen and (min-width: 768px)
 {
-.css-5ucbon div {
-    width: 48px;
+.css-5ucbon input  {
+    width: 48px !important;
 }}
 
-.css-5ucbon div {
-    width: 42px;
+.css-5ucbon input{
+    /* width: 42px; */
     color: rgb(255, 255, 255);
     text-align: center;
     font-size: 13px;
+    margin-left: 12px;
     font-weight: 700;
 }
 
-/* .css-vurnku {
-    width: 4rem;
-    padding: .7rem;
-    font-size: 1.5rem;
+.css-vurnku {
+    width: 48px !important;
+    padding: .7rem !important;
+   background-color: #292929 ;
     border: 0;
     border-top: 0 solid #dbdbdb;
     border-bottom: 0 solid #dbdbdb;
     text-align: center;
 
     
-} */
+}
