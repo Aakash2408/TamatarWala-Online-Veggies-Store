@@ -21,7 +21,10 @@ const orderList = (props) => {
                                     <h6 className={'shop-cart-item-price'}>
                                        Rs.
                                          {props.orderPrice.toLocaleString()}
-                                        </h6>
+                                    </h6>
+                                    <h6 className={'shop-cart-item-price'}>
+                                        {props.date}
+                                    </h6>
                                 </div>
                             </div>
                         </div>

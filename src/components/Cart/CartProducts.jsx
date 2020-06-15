@@ -1,11 +1,49 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import props from 'prop-types';
 
-const cartProducts = (props) => {
+class cartProducts extends React.Component {
 
+    constructor(props) {
+        super(props);
+        
+        this.state = {value: this.props.productCount}
+        this.increment = this.increment.bind(this);
+        this.decrement = this.decrement.bind(this);
+      }
+      
+      increment() {
+        this.setState(prevState => {
+            if(prevState.value<this.props.productQuantity){
+                this.props.updateProductCount(prevState.value+1)
+                return {value:prevState.value+1}
+            }else{
+                return{...prevState}
+            }
+        })
+
+
+      }
+      
+      decrement() {
+        this.setState(prevState => {
+            if(prevState.value>0){
+                this.props.updateProductCount(prevState.value-1)
+                return {value:prevState.value-1}
+            }else{
+                return {...prevState}
+            }
+        })
+        
+      }
+      
+
+    
     // let currencyKeys = Object.keys(props.currency);
     // let currencyName = props.currency[currencyKeys[1]];
-
+    
+  render(){
+      const props = this.props;
     return (
         <React.Fragment>
             <div className="row">
@@ -35,7 +73,30 @@ const cartProducts = (props) => {
                                        Rs.
                                          {props.productPrice.toLocaleString()}
                                         </h6>
-                                    <select
+
+                                        {/* <div className="quantity-input">
+                                            <button className="quantity-input__modifier quantity-input__modifier--left" onClick={this.decrement}>
+                                            &mdash;
+                                            </button>
+                                            <input className="quantity-input__screen" type="text" value={this.state.value} readonly />
+                                            <button className="quantity-input__modifier quantity-input__modifier--right" onClick={this.increment}>
+                                            &#xff0b;
+                                            </button>  
+                                        </div> */}
+                                        
+                                        <div class="css-5ucbon">
+                                            <button title="Decrement" onClick={this.decrement} class="css-110od4n">
+                                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M368.5 240h-225c-8.8 0-16 7.2-16 16 0 4.4 1.8 8.4 4.7 11.3 2.9 2.9 6.9 4.7 11.3 4.7h225c8.8 0 16-7.2 16-16s-7.2-16-16-16z"></path>
+                                            </svg>
+                                            </button>
+                                            <input type="text" value={this.state.value} readonly class="css-vurnku"></input>
+                                            <button title="Increment" onClick={this.increment} class="css-110od4n"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M368.5 240H272v-96.5c0-8.8-7.2-16-16-16s-16 7.2-16 16V240h-96.5c-8.8 0-16 7.2-16 16 0 4.4 1.8 8.4 4.7 11.3 2.9 2.9 6.9 4.7 11.3 4.7H240v96.5c0 4.4 1.8 8.4 4.7 11.3 2.9 2.9 6.9 4.7 11.3 4.7 8.8 0 16-7.2 16-16V272h96.5c8.8 0 16-7.2 16-16s-7.2-16-16-16z"></path></svg></button></div>
+
+
+                                     
+                                    {/* <select
                                         className="form-control input-sm my-3 w-50"
                                         disabled={props.productQuantity <= 0}
                                         value={props.productCount}
@@ -44,7 +105,7 @@ const cartProducts = (props) => {
                                         {[...Array(props.productQuantity)].map((number, index) => (
                                             <option key={index} value={index + 1}>{index + 1}</option>
                                         ))}
-                                    </select>
+                                    </select> */}
                                     <h6 className={'shop-cart-item-total'}>Total
                                     Rs.
                                         <span>{props.productPrice * props.productCount.toLocaleString()}</span>
@@ -63,9 +124,10 @@ const cartProducts = (props) => {
             </div>
             <hr/>
         </React.Fragment>
-    )
-};
-
+    );
+                                
+}
+}
 cartProducts.propTypes = {
     productPhoto: PropTypes.string.isRequired,
     productName: PropTypes.string.isRequired,

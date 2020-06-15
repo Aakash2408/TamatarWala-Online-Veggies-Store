@@ -602,5 +602,115 @@ input[type="radio"] {
 }
 
 
+@media screen and (min-width: 768px)
+{
+.css-5ucbon {
+    min-width: 106px;
+    min-height: 36px;
+}}
+.css-5ucbon {
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    min-width: 100px;
+    min-height: 32px;
+    background-color: rgb(41, 41, 41);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 6px 12px;
+    margin: 0px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+@media screen and (min-width: 768px)
+{
+.css-5ucbon button {
+    min-height: 36px;
+}}
+.css-5ucbon button {
+    min-width: 32px;
+    min-height: 32px;
+    padding: 0px;
+}
+@media screen and (min-width: 768px){
+.css-110od4n {
+    min-width: 172px;
+    min-height: 50px;
+}
+}
+.css-110od4n {
+    box-sizing: border-box;
+    margin: 0;
+    min-width: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-block;
+    text-align: center;
+    line-height: inherit;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    font-size: inherit;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: #ffffff;
+    background-color: #292929;
+    border: 0;
+    border-radius: 4px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    cursor: pointer;
+    min-width: 130px;
+    min-height: 40px;
+    border-radius: 6px;
+    font-weight: 700;
+    text-transform: capitalize;
+    -webkit-transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease;
+}
+@media screen and (min-width: 768px){
+.css-110od4n svg {
+    width: 18px;
+    height: 18px;
+}}
+.css-110od4n svg {
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+}
+@media screen and (min-width: 768px)
+{
+.css-5ucbon div {
+    width: 48px;
+}}
 
+.css-5ucbon div {
+    width: 42px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+}
 
+/* .css-vurnku {
+    width: 4rem;
+    padding: .7rem;
+    font-size: 1.5rem;
+    border: 0;
+    border-top: 0 solid #dbdbdb;
+    border-bottom: 0 solid #dbdbdb;
+    text-align: center;
+
+    
+} */

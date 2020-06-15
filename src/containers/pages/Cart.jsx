@@ -61,7 +61,7 @@ class Cart extends Component {false
                             productPrice={Math.round(productFromStore.price)}
                             productCount={productInCart.count}
                             productQuantity={productFromStore.quantity}
-                            updateProductCount={(event) => this.productCountHandler(event.target.value, productInCart.id)}
+                            updateProductCount={(value) => this.productCountHandler(value, productInCart.id)}
                             removeCartProduct={() => this.props.removeProductFromCartProp(productInCart.id, productInCart.count)}
                             currency={this.props.usedCurrencyProp}
                         />
