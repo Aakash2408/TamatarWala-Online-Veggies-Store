@@ -3,9 +3,11 @@ import Menu from '../UI/Menu/Menu';
 import MenuComponent from '../Menus/MenuComponent';
 import PropTypes from 'prop-types';
 import MenuItem from "../UI/MenuItem/MenuItem";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faShoppingCart} from  '@fortawesome/free-solid-svg-icons';
 const mainMenu = (props) => {
     return (
+        <div className="nav-1">
         <nav className="navbar navbar-expand-md navbar-light bg-light">
             <span className="navbar-brand">PICKSY</span>
             
@@ -18,10 +20,12 @@ const mainMenu = (props) => {
             <div className="collapse navbar-collapse">
                 <Menu menuClasses="navbar-nav ml-auto mt-2 mt-lg-0">
                     <MenuComponent cartCount={props.cartItemNumber}/>
+                  
                 </Menu>
             </div>
            
         </nav>
+        </div>
     )
 };
 

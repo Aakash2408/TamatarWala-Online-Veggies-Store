@@ -12,6 +12,7 @@
 
 .shop-container {
     width: 75%;
+    margin-top:80px;
 }
 
 .shop-bg-white {
@@ -614,13 +615,13 @@ input[type="radio"] {
 @media screen and (max-width: 768px)
 {
 .css-quantity {
-    max-width: 140px ;
+    max-width: 100px ;
     min-height: 36px;
 }}
 @media screen and (min-width: 768px)
 {
 .css-quantity {
-    max-width: 140px ;
+    max-width: 100px ;
     min-height: 36px;
 }}
 .css-quantity {
@@ -650,7 +651,7 @@ min-width: 16px !important;
     min-height: 36px;
 }}
 .css-quantity button {
-    min-width: 32px;
+    min-width: 2px;
     min-height: 32px;
     
 }
@@ -755,4 +756,20 @@ min-width: 16px !important;
 .menulogin{
     display: flex !important;
     flex-direction: row !important;
+}
+.cart-icon{
+    margin-left:90%;
+}
+
+@media screen and (min-width:468px){
+    .navbar {
+        position: fixed !important;
+        z-index: 999 !important;
+        width: 100%;
+    }
+}
+.navbar{
+    position: fixed !important;
+    z-index: 999 !important;
+    width: 100%;
 }

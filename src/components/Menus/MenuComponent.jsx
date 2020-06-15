@@ -23,9 +23,9 @@ const menuComponent = (props) => {
             <MenuItem linkTo={'/cart'}>
                 Cart <span className="badge badge-light">{props.cartCount}</span>
             </MenuItem>
-           
-           
- <MenuItem linkTo={'/signInpage'} >Login</MenuItem>
+            
+            
+             <MenuItem linkTo={'/signInpage'} >Login</MenuItem>
      
 
         </React.Fragment>
