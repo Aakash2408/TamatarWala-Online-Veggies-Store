@@ -67,9 +67,14 @@ const reducer = (state = initialState, action) => {
         
         case actionTypes.FETCH_CART:
              let newCart2 = reactLocalStorage.getObject('cart',[],true);
+             var cartTotal = 0;
+             for(var i=0;i<newCart2.length;i++){
+                 cartTotal+=newCart2[i].count;
+                 
+             }
             return{
                 ...state,
-                cartTotal: newCart2.length,
+                cartTotal: cartTotal,
                 cart: newCart2,
             }
         
