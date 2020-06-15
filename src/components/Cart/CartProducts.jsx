@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import props from 'prop-types';
-
+import { render } from 'react-dom';
 class cartProducts extends React.Component {
 
     constructor(props) {
@@ -71,7 +71,7 @@ class cartProducts extends React.Component {
                                 <div className="col-sm-6 text-left">
                                     <h6 className={'shop-cart-item-price'}>
                                        Rs.
-                                         {props.productPrice.toLocaleString()}
+                                         {props.productPrice}
                                         </h6>
 
                                         {/* <div className="quantity-input">
@@ -84,12 +84,12 @@ class cartProducts extends React.Component {
                                             </button>  
                                         </div> */}
                                         
-                                        <div class="css-5ucbon">
-                                            <button title="Decrement" onClick={this.decrement} class="css-110od4n">
+                                        <div class="css-quantity" >
+                                            <button title="Decrement" onClick={this.decrement} class="plus-minus">
                                            -
                                             </button>
-                                            <input type="text" value={this.state.value}  disabled={props.productQuantity <= 0} onChange={props.updateProductCount} readonly class="css-vurnku" />
-                                            <button title="Increment" onClick={this.increment} class="css-110od4n">+
+                                            <input type="text" value={this.state.value}  disabled={props.productQuantity <= 0} onChange={props.updateProductCount} readonly class="css-111" />
+                                            <button title="Increment" onClick={this.increment}  class="plus-minus">+
 </button></div>
 
 
@@ -106,7 +106,7 @@ class cartProducts extends React.Component {
                                     </select> */}
                                     <h6 className={'shop-cart-item-total'}>Total
                                     Rs.
-                                        <span>{props.productPrice * props.productCount.toLocaleString()}</span>
+                                        <span>{props.productPrice * props.productCount}</span>
                                     </h6>
                                 </div>
                                 <div className="col-sm-4 offset-sm-2 shop-cart-b-container">

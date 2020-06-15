@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 import firebase from "firebase";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 
-class Cart extends Component {false
+class Cart extends Component {
     state = { isSignedIn: false }
   uiConfig = {
     signInFlow: "popup",

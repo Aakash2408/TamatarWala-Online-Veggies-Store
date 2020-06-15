@@ -56,7 +56,7 @@
     
     @media screen and (max-width: 768px){
     .css-1r974q8::after {
-        background: linear-gradient(to right,rgba(0,0,0,0.48) ,rgba(0,0,0,0));
+        background: linear-gradient(to right,rgba(0,0,0,0.6) ,rgba(0,0,0,5));
     }
     }
     
@@ -65,7 +65,7 @@
         display: block;
         width: 100%;
         height: 100%;
-        /* background: linear-gradient(to right,rgba(0,0,0,0.75) ,rgba(0,0,0,0)); */
+        background: linear-gradient(to right,rgba(0,0,0,0.75) ,rgba(0,0,0,0));
         position: absolute;
         top: 0;
         left: 0;

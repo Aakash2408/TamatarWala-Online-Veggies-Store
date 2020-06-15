@@ -8,9 +8,7 @@ const mainMenu = (props) => {
     return (
         <nav className="navbar navbar-expand-md navbar-light bg-light">
             <span className="navbar-brand">PICKSY</span>
-            <MenuItem linkTo={'/cart'}>
-                Cart <span className="badge badge-light">{props.cartCount}</span>
-            </MenuItem>
+            
             <button
                 className="navbar-toggler"
                 onClick={props.toggleSideBar}>

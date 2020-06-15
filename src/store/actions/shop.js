@@ -105,6 +105,7 @@ export const confirmOrder = (order, ownProps) => {
                 const userRef = db.collection('users').doc(user.uid).collection('orders').add({
                     "cart":order['cart'],
                     "price":order['price'],
+                    "date":new Date().toLocaleString(),
                     "user_details":order['user']
                  }).then(()=>{
                      dispatch(confirmOrderSuccess());

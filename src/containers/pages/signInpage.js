@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import firebase from "firebase";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
+import Index from './Index';
+import { Redirect } from 'react-router';
 
 class signInpage extends Component {
      state = { isSignedIn: false }
@@ -24,10 +26,21 @@ class signInpage extends Component {
   }   
     render() {
         return (
-            <div className="main">
-                  <StyledFirebaseAuth 
-                uiConfig={this.uiConfig}
-                firebaseAuth={firebase.auth()}/>
+          <div className="main">
+          <div>{ this.state.isSignedin ?
+            (
+              <button linkTo={'/'} onClick={()=>firebase.auth().signOut()}>SignOut</button>
+            )
+                
+            :  (<StyledFirebaseAuth 
+            uiConfig={this.uiConfig}
+            firebaseAuth={firebase.auth.then}/>
+            
+            
+            )}
+                        
+            </div>
+            
             </div>
         );
     }

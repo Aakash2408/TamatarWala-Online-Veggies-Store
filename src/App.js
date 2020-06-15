@@ -15,22 +15,23 @@ import {fetchProducts} from './store/actions/shop'
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import './App.css';
 import SpecificOrder from './containers/pages/SpecificOrder';
+import signInpage from './containers/pages/signInpage';
 import Orders from './containers/pages/Orders';
-
+import firebase from "firebase";
 class App extends Component {
     // false
-    //      state = { isSignedIn: false }
-    //   uiConfig = {
-    //     signInFlow: "popup",
-    //     signInOptions: [
-    //       firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-    //       firebase.auth.EmailAuthProvider.PROVIDER_ID,
-    //       firebase.auth.PhoneAuthProvider.PROVIDER_ID
-    //     ],
-    //     callbacks: {
-    //       signInSuccess: () => false
-    //     }
-    //   }
+         state = { isSignedIn: false }
+      uiConfig = {
+        signInFlow: "popup",
+        signInOptions: [
+          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+          firebase.auth.EmailAuthProvider.PROVIDER_ID,
+          firebase.auth.PhoneAuthProvider.PROVIDER_ID
+        ],
+        callbacks: {
+          signInSuccess: () => false
+        }
+      }
 
     //   componentDidMount = () => {
     //     firebase.auth().onAuthStateChanged(user => {
@@ -64,6 +65,7 @@ class App extends Component {
                             <Route path={'/orders'} component={Orders} />
                             <Route path={'/cart'} component={Cart} />
                             <Route path={'/checkout'} component={Checkout} />
+                            <Route path={'/signInpage'} component={signInpage}/>
                             {/*always redirect to index*/}
                             <Redirect to={'/'} />
                         </Switch>

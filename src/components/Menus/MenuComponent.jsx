@@ -1,3 +1,4 @@
+ 
 import React from 'react';
 import MenuItem from "../UI/MenuItem/MenuItem";
 import PropTypes from 'prop-types';
@@ -7,8 +8,8 @@ import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 
 
 const menuComponent = (props) => {
-    
-
+   
+{this.isSignedIn=false}
 
   
     return (
@@ -25,7 +26,7 @@ const menuComponent = (props) => {
             </MenuItem>
            
            
- <MenuItem linkTo={'/'} onClick={()=>firebase.auth().signOut()}>SignOut</MenuItem>
+ <MenuItem linkTo={'/signInpage'} >Login</MenuItem>
      
 
         </React.Fragment>

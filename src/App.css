@@ -219,7 +219,7 @@ nav {
 .shop-btn-secondary:active,
 .shop-btn-secondary:active:focus,
 .shop-btn-secondary.active {
-    color: #FFF;
+    color: #FFF !important;
     font-size: 1rem;
     background-color: #F17E0A;
     font-weight: 600;
@@ -267,7 +267,7 @@ nav {
 .shop-btn-outline.active {
     background-color: transparent;
     border-color: #6c757d;
-    color: #6c757d;
+    color: #6c757d !important;
     margin-right: 1rem;
 }
 
@@ -282,6 +282,7 @@ nav {
 .shop-cart-item-price,
 .shop-cart-item-total {
     font-size: .95rem;
+    margin-top:7px;
 }
 
 .shop-cart-item-total span {
@@ -513,7 +514,7 @@ input[type="radio"] {
 
     .shop-cart-b-container {
         text-align: left !important;
-        margin-top: .5rem;
+        margin-top: 24% !important;
     }
 
     .btn-outline-secondary {
@@ -523,6 +524,8 @@ input[type="radio"] {
 
     .checkout {
         margin-right: .5rem;
+        color: white;
+        text-decoration: none;
     }
 
     .shop-cart-total {
@@ -602,16 +605,28 @@ input[type="radio"] {
 }
 
 
-@media screen and (min-width: 768px)
+
+
+
+
+
+
+@media screen and (max-width: 768px)
 {
-.css-5ucbon {
-    min-width: 16px !important;
+.css-quantity {
+    max-width: 140px ;
     min-height: 36px;
 }}
-.css-5ucbon {
+@media screen and (min-width: 768px)
+{
+.css-quantity {
+    max-width: 140px ;
+    min-height: 36px;
+}}
+.css-quantity {
     box-sizing: border-box;
     display: flex;
-    -webkit-box-align: center;
+    /* -webkit-box-align: center; */
     align-items: center;
     
     min-height: 22px;
@@ -621,23 +636,31 @@ input[type="radio"] {
     border-radius: 6px;
     overflow: hidden;
 }
+.quantity{
+display: flex;
+box-sizing: border-box;
+min-width: 16px !important;
+    min-height: 36px;
+
+}
+
 @media screen and (min-width: 768px)
 {
-.css-5ucbon button {
+.css-quantity button {
     min-height: 36px;
 }}
-.css-5ucbon button {
+.css-quantity button {
     min-width: 32px;
     min-height: 32px;
-    padding: 0px;
+    
 }
 @media screen and (min-width: 768px){
-.css-110od4n {
-    min-width: 172px;
+.plus-minus{
+    min-width: 12px;
     min-height: 50px;
 }
 }
-.css-110od4n {
+.plus-minus{
     box-sizing: border-box;
     margin-left: 10px;
     
@@ -666,23 +689,50 @@ input[type="radio"] {
    
     transition: opacity 0.2s ease;
 }
-@media screen and (min-width: 768px){
-.css-110od4n svg {
+/* @media screen and (min-width: 768px){
+.css-plus-minussvg {
     width: 18px;
     height: 18px;
-}}
-.css-110od4n svg {
+}} */
+/* .css-plus-minussvg {
     width: 16px;
     height: 16px;
     margin-left: 10px;
-}
+} */
 @media screen and (min-width: 768px)
 {
-.css-5ucbon input  {
-    width: 48px !important;
+.css-quantity input  {
+    width: 40px !important;
 }}
 
-.css-5ucbon input{
+.css-quantity input{
+    width: 42px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 13px;
+    margin-left: 12px;
+    font-weight: 700;
+}
+
+.css-111{
+    /* width: 48px !important; */
+    /* padding: .7rem !important; */
+   background-color: #292929 ;
+    border: 0;
+    border-top: 0 solid #dbdbdb;
+    border-bottom: 0 solid #dbdbdb;
+    text-align: center;
+
+    
+}
+
+@media screen and (max-width: 768px)
+{
+.css-quantity input  {
+    width: 35px !important;
+}}
+
+.css-quantity input{
     /* width: 42px; */
     color: rgb(255, 255, 255);
     text-align: center;
@@ -691,9 +741,9 @@ input[type="radio"] {
     font-weight: 700;
 }
 
-.css-vurnku {
-    width: 48px !important;
-    padding: .7rem !important;
+.css-111{
+    /* width: 48px !important; */
+    /* padding: .7rem !important; */
    background-color: #292929 ;
     border: 0;
     border-top: 0 solid #dbdbdb;
@@ -701,4 +751,8 @@ input[type="radio"] {
     text-align: center;
 
     
+}
+.menulogin{
+    display: flex !important;
+    flex-direction: row !important;
 }
