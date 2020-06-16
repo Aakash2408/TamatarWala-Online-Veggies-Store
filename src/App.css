@@ -8,6 +8,7 @@
 }
 .navbar{
     position:static;
+
 }
 
 .shop-container {
@@ -35,7 +36,12 @@ input.shop-input-error{
     background-color: #F2DEDE;
     border: 1px solid #EED3D7;
 }
-
+@media  screen and (max-width:768px){
+    .nav{
+        display: block !important;
+        /* flex-direction: column; */
+    }
+}
 input.success{
     color: #398843;
     background-color: #DFF0D8;
@@ -50,6 +56,7 @@ input.success{
 
 nav {
     box-shadow: 0 2px 2px -2px gray;
+    height:65px !important;
 }
 
 .navbar-light .navbar-brand,
@@ -57,6 +64,43 @@ nav {
     color: #E40046;
     font-weight: bold;
 }
+.cart{
+    background-color: #E40046;
+    color: white !important;
+    border-radius: 5px;
+    margin-right:-60%;
+}
+
+@media screen and (min-width: 768px){
+    .cart{
+        display: none;
+    }
+    
+}
+@media screen and (max-width: 768px){
+    .cart{
+        margin-right:-65% !important;
+    }
+    .cart-main{
+        display: none;
+    }
+}
+@media screen and (max-width: 735px){
+    .cart{
+        margin-right:-60% !important;
+    }
+}
+@media screen and (max-width: 616px){
+    .cart{
+        margin-right:-55% !important;
+    }
+}
+@media screen and (max-width: 535px){
+    .cart{
+        margin-right:-45% !important;
+    }
+}
+
 
 .badge-light {
     color: #FFF;
@@ -66,6 +110,7 @@ nav {
 .nav-link.active .badge-light {
     color: #E40046;
     background-color: #FFF;
+    
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -81,6 +126,8 @@ nav {
 .navbar-light .navbar-nav .show > .nav-link {
     background-color: #E40046;
     color: #FFF;
+    border-radius: 5px !important;
+
 }
 
 .bg-light {
@@ -358,10 +405,16 @@ nav {
 
 .nav {
     list-style-type: none;
+    /* display: flex !important;
+    flex-direction: column !important; */
 }
-
+.side-menu{
+    display: flex;
+    flex-direction: column !important;
+    height:100% !important;
+}
 .nav .nav-item .nav-link {
-    padding: 15px 20px;
+    padding: 10px 20px;
     font-size: 1em;
     display: block;
     color: #6e6e6e;
@@ -615,13 +668,13 @@ input[type="radio"] {
 @media screen and (max-width: 768px)
 {
 .css-quantity {
-    max-width: 100px ;
+    max-width: 90px ;
     min-height: 36px;
 }}
 @media screen and (min-width: 768px)
 {
 .css-quantity {
-    max-width: 100px ;
+    max-width: 88px ;
     min-height: 36px;
 }}
 .css-quantity {
@@ -648,16 +701,16 @@ min-width: 16px !important;
 @media screen and (min-width: 768px)
 {
 .css-quantity button {
-    min-height: 36px;
+    min-height: 28px !important;
 }}
 .css-quantity button {
-    min-width: 2px;
+    min-width: 1px !important;
     min-height: 32px;
     
 }
 @media screen and (min-width: 768px){
 .plus-minus{
-    min-width: 12px;
+    min-width: 8px;
     min-height: 50px;
 }
 }
@@ -703,7 +756,7 @@ min-width: 16px !important;
 @media screen and (min-width: 768px)
 {
 .css-quantity input  {
-    width: 40px !important;
+    width: 25px !important;
 }}
 
 .css-quantity input{
@@ -730,7 +783,7 @@ min-width: 16px !important;
 @media screen and (max-width: 768px)
 {
 .css-quantity input  {
-    width: 35px !important;
+    width: 13px !important;
 }}
 
 .css-quantity input{

@@ -3,9 +3,10 @@ import firebase from "firebase";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import Index from './Index';
 import { Redirect } from 'react-router';
-
+// import MenuItem from "../UI/MenuItem/MenuItem.jsx";
+import { Link } from 'react-router-dom';
 class signInpage extends Component {
-     state = { isSignedIn: false }
+     state = { isSignedIn: true }
   uiConfig = {
     signInFlow: "popup",
     signInOptions: [
@@ -28,8 +29,11 @@ class signInpage extends Component {
         return (
           <div className="main">
           <div>{ this.state.isSignedin ?
-            (
-              <button linkTo={'/'} onClick={()=>firebase.auth().signOut()}>SignOut</button>
+            (  <div className="container shop-container py-4">
+            <div className={'p-4 shop-div'}>
+                <Index/>
+            </div>
+        </div>
             )
                 
             :  (<StyledFirebaseAuth 

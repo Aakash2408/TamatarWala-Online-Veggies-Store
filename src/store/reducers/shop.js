@@ -8,7 +8,7 @@ const initialState = {
     cart: [],
     vat: 16, //vat in percentage
     cartTotal: 0,
-    state : { isSignedIn: false },
+    // state : { isSignedIn: false },
     orderSuccess: false,
     promoCode: [
         {
