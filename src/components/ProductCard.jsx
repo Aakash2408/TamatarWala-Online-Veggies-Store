@@ -76,7 +76,7 @@ class productCard  extends React.Component{
                             {
                                 this.props.activeCartProd && <div class="css-quantity" >
                                         <button title="Decrement" onClick={this.decrement} class="plus-minus">-</button>
-                                        <input type="text" value={this.props.productCount.toLocaleString()}  disabled={props.productQuantity <= 0} onChange={(event)=>props.updateProductCount(event.target.value)} readonly class="css-111" />
+                                        <input type="text" value={this.props.productCount.toLocaleString()}  disabled={props.productQuantity <= 0} onChange={(event)=>props.updateProductCount(event.target.value)} readOnly class="css-111" />
                                         <button title="Increment" onClick={this.increment}  class="plus-minus">+</button>
                                 </div>
                             }
