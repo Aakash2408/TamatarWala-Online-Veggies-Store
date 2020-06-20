@@ -110,7 +110,7 @@ const reducer = (state = initialState, action) => {
                         modalMessage = 'Sorry! Your product order cannot exceed our stock.'
                     }
                 } else {
-                    newCart = state.cart.concat({ id: action.productId, count: 1,productName: productInStore.name});
+                    newCart = state.cart.concat({ id: action.productId, count: 1,productName: productInStore.name,doc_id:productInStore.doc_id});
                     newCartTotal = state.cartTotal + 1
                 }
             }

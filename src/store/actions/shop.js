@@ -61,7 +61,9 @@ export function fetchProducts(){
             .get()
             .then(querySnapshot => {
                 // this is the data fetched from firebase
-                const data = querySnapshot.docs.map(doc => doc.data());
+                const data = querySnapshot.docs.map(doc => {
+                    const d = doc.data()
+                    return {...d,doc_id:doc.id}});
                 dispatch(fetchProductsSuccess(data));
                 dispatch(fetchCart());
             }).catch((err)=>{
@@ -92,6 +94,19 @@ export const updateCartProductCount = (value, productId) => {
     }
 };
 
+export function reduceQuantities(order){
+    const firestore = firebase.firestore()
+    for(var i=0;i<order.length;i++){
+        const dec = firebase.firestore.FieldValue.increment(-order[i].count)
+
+        firestore.collection('products').doc(order[i].doc_id).update({
+            quantity:dec
+        })
+    }
+    
+
+}
+
 export const confirmOrder = (order, ownProps) => {
     return dispatch => {
 
@@ -107,9 +122,10 @@ export const confirmOrder = (order, ownProps) => {
                     "price":order['price'],
                     "date":new Date().toLocaleString(),
                     "user_details":order['user']
-                 }).then(()=>{
+                 }).then((r)=>{
+                     reduceQuantities(order.cart)
                      dispatch(confirmOrderSuccess());
-                     dispatch(fetchOrders());
+                     dispatch(fetchProducts())
                  });
             }else{
                 dispatch(confirmOrderFailure())

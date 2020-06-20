@@ -3,8 +3,8 @@ import Menu from '../UI/Menu/Menu';
 import MenuComponent from '../Menus/MenuComponent';
 import PropTypes from 'prop-types';
 import MenuItem from "../UI/MenuItem/MenuItem";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faShoppingCart} from  '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import {faShoppingCart} from  '@fortawesome/free-solid-svg-icons';
 import { NavLink, Link } from 'react-router-dom';
 const mainMenu = (props) => {
     return (
