@@ -15,7 +15,7 @@ import {fetchProducts} from './store/actions/shop'
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import './App.css';
 import SpecificOrder from './containers/pages/SpecificOrder';
-import signInpage from './containers/pages/signInpage';
+import Sign from './containers/pages/sign.js';
 import Orders from './containers/pages/Orders';
 import firebase from "firebase";
 class App extends Component {
@@ -65,7 +65,7 @@ class App extends Component {
                             <Route path={'/orders'} component={Orders} />
                             <Route path={'/cart'} component={Cart} />
                             <Route path={'/checkout'} component={Checkout} />
-                            <Route path={'/signInpage'} component={signInpage}/>
+
                             {/*always redirect to index*/}
                             <Redirect to={'/'} />
                         </Switch>

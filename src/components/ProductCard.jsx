@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import "../components/css/homecards.css";
+import "./css/homecards.css";
 import { render } from 'react-dom';
 class productCard  extends React.Component{
     constructor(props) {
@@ -59,9 +59,10 @@ class productCard  extends React.Component{
                         />
                         
 
-                        <div className="css-qiwenx">
+                        <div className="css-qiwenx" >
                             { !this.props.activeCartProd && <button
                                     className="css-pncr0q"
+                                    style={this.props.productCount>0?{backgroundColor:'black'}:{}}
                                     disabled={props.productQuantity <= 0 }
                                     onClick={props.addToCart}>
                                 {this.props.productCount==0 && <svg width="13" height="12" viewBox="0 0 13 12">
@@ -75,7 +76,7 @@ class productCard  extends React.Component{
                             {
                                 this.props.activeCartProd && <div class="css-quantity" >
                                         <button title="Decrement" onClick={this.decrement} class="plus-minus">-</button>
-                                        <input type="text" value={this.props.productCount.toLocaleString()}  disabled={props.productQuantity <= 0} onChange={(event)=>props.updateProductCount(event.target.value)} readonly class="css-111" />
+                                        <input type="text" value={this.props.productCount.toLocaleString()}  disabled={props.productQuantity <= 0} onChange={(event)=>props.updateProductCount(event.target.value)} readOnly class="css-111" />
                                         <button title="Increment" onClick={this.increment}  class="plus-minus">+</button>
                                 </div>
                             }

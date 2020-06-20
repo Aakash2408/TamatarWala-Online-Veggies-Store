@@ -74,10 +74,12 @@ class Orders extends Component {false
                 </div>
             </div>):(
                 <div>
+                    <div className="container shop-container py-4">
+                <div className={'p-4 shop-div'}>
                 <StyledFirebaseAuth 
                 uiConfig={this.uiConfig}
                 firebaseAuth={firebase.auth()}/>
-                </div>
+                </div></div></div>
             )
             }
         </div>
