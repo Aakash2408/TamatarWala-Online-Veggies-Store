@@ -1,7 +1,8 @@
 import React, {Component, useEffect } from 'react';
 import {Redirect} from 'react-router-dom';
+import axios from 'axios'
 import {connect} from 'react-redux';
-import {confirmOrder, setPromoCode} from '../../store/actions/shop';
+import {confirmOrder, setPromoCode, confirmOrderSuccess, fetchProducts} from '../../store/actions/shop';
 import CheckoutCartProduct from '../../components/Checkout/CheckoutCartProduct';
 import PromoCodeForm from '../../components/Checkout/PromoCodeForm';
 import PromoCodeValue from '../../components/Checkout/PromoCodeValue';
@@ -12,84 +13,99 @@ import PaymentOptions from '../../components/Checkout/Forms/Payments/PaymentOpti
 import Alert from '../../components/UI/Alert/Alert';
 import PropTypes from 'prop-types';
 import formValidator from '../../Utility/formValidation';
+
+import { Loading } from './Loading';
 // import $ from'jquery';
 // import {CardElement, injectStripe} from 'react-stripe-elements';
 
 class Checkout extends Component {
 
-    state = {
-        promoCode: '',
-        showAlert: false,
-        alertType: '',
-        alertMessage: '',
-        paymentMethod: "creditCard",
-        shippingPrice: 50,
-        usedDeliveryOption: 1,
-        makeOrder: false,
-        correctCardInfo: false,
-        customerInfo: {
-            firstName: {
-                value: '',
-                valid: false,
-                touched: false,
-                errorsMsg: '',
-            },
-            secondName: {
-                value: '',
-                valid: false,
-                touched: false,
-                errorsMsg: '',
-            },
-            email: {
-                value: '',
-                valid: false,
-                touched: false,
-                errorsMsg: '',
-            },
-            mobile:{
-                value:'',
-                valid:false,
-                touched:false,
-                errorsMsg:'',
-
-            },
-            address:{
-                 value:'',
-                valid:false,
-                touched:false,
-                errorsMsg:'',
-            }
-        },
-    };
-    paymentProcess=(ev)=> {
     
+    constructor(props){
+        super(props)
+        this.state = {
+            promoCode: '',
+            showAlert: false,
+            alertType: '',
+            alertMessage: '',
+            loading:false,
+            // paymentMethod: "creditCard",
+            shippingPrice: 0,
+            usedDeliveryOption: 1,
+            makeOrder: false,
+            correctCardInfo: false,
+            customerInfo: {
+                firstName: {
+                    value: '',
+                    valid: false,
+                    touched: false,
+                    errorsMsg: '',
+                },
+                secondName: {
+                    value: '',
+                    valid: false,
+                    touched: false,
+                    errorsMsg: '',
+                },
+                email: {
+                    value: '',
+                    valid: false,
+                    touched: false,
+                    errorsMsg: '',
+                },
+                mobile:{
+                    value:'',
+                    valid:false,
+                    touched:false,
+                    errorsMsg:'',
+    
+                },
+                address:{
+                     value:'',
+                    valid:false,
+                    touched:false,
+                    errorsMsg:'',
+                }
+            },
+        };
 
-        ev.preventDefault();
+    }
+    paymentProcess=(order_id,amount)=> {
+        
         var options = {
-            "key": "rzp_test_nLgCAIuSdqx5RK", // Enter the Key ID generated from the Dashboard
-            "amount": "50000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            "key": "rzp_live_cBbJTiUVjvXaY4", // Enter the Key ID generated from the Dashboard
+            "amount": parseInt(amount)*100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
             "currency": "INR",
-            "name": "Acme Corp",
+            "name": "Tamatarwala",
             "description": "Test Transaction",
+            // callback_url:'',
             "image": "https://example.com/your_logo",
-            "order_id": "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-            "handler": function (response){
-                alert(response.razorpay_payment_id);
-                alert(response.razorpay_order_id);
-                alert(response.razorpay_signature)
+            "order_id": order_id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+            "handler": (response)=>{
+                // this.setState({loading:true})
+                console.log('payment completed')
+                this.setState({loading:false})
+                this.props.confirmOrderSuccProp();
+                this.props.fetchProdProp()
+                // axios.post('',response).then(r=>{
+                    
+                //     console.log(r)
+                // })
+
             },
             "prefill": {
-                "name": "Gaurav Kumar",
-                "email": "gaurav.kumar@example.com",
-                "contact": "9999999999"
+                "name": "",
+                "email": "",
+                "contact": ""
             },
             "notes": {
-                "address": "Razorpay Corporate Office"
+                "address": ""
             },
             "theme": {
-                "color": "#F37254"
+                "color": "#e40046"
             }
         };
+        this.setState({loading:false})
         let rzp = new window.Razorpay(options);
         rzp.open();
         // document.getElementById('rzp-button1').onclick = function(e){
@@ -140,6 +156,9 @@ class Checkout extends Component {
     };
 
     confirmOrderHandler = (event,shoppingTotal) => {
+        this.setState({
+            loading:true
+        })
         event.preventDefault();
         let order = {};
         order['cart'] = this.props.cartProductsProps;
@@ -157,7 +176,8 @@ class Checkout extends Component {
         order['price'] = shoppingTotal
         // todo
         // create stripe token for payments
-        this.props.confirmOrderProp(order)
+        
+        this.props.confirmOrderProp(order,this.paymentProcess.bind(this))
 
     };
 
@@ -261,7 +281,7 @@ class Checkout extends Component {
         return (
 
             <div className="container py-4">
-
+                  <div className="container order py-4">
                 {this.props.cartTotalProps <= 0 ? <Redirect to="/cart"/> : null}
 
                 {this.state.showAlert ? <Alert
@@ -273,6 +293,7 @@ class Checkout extends Component {
                 }
 
                 <div className="row">
+                    
                     <div className="col-md-4 order-md-2 mb-4">
 
                         <h4 className="d-flex justify-content-between align-items-center mb-3">
@@ -309,6 +330,7 @@ class Checkout extends Component {
                         />
 
                     </div>
+                    
                     <div className="col-md-8 order-md-1 ">
                         <h4 className="mb-3">Billing Information</h4>
                         <form className="shop-form shop-bg-white p-3" noValidate>
@@ -324,19 +346,19 @@ class Checkout extends Component {
                                 usedDeliveryOption={this.state.usedDeliveryOption}
                                 deliveryOptionChanged={this.deliveryOptionChangeHandler}/>
 
-                            <h4 className="mb-3">Payment Method</h4>
+                            {/* <h4 className="mb-3">Payment Method</h4> */}
                             {/* payment option selection field */}
-                            <PaymentOptions
+                            {/* <PaymentOptions
                                 paymentMethod={this.state.paymentMethod}
-                                paymentOptionChanged={this.paymentOptionChangeHandler}/>
+                                paymentOptionChanged={this.paymentOptionChangeHandler}/> */}
                             {/* payment section */}
-                            <div>
+                            {/* <div>
                                 {chosenPaymentMethod}
-                            </div>
+                            </div> */}
 
                             <hr className="mb-4"/>
                             <button
-                                disabled={!(this.state.makeOrder && this.state.correctCardInfo)}
+                                disabled={!(this.state.makeOrder)}
                                 className="btn shop-btn-secondary btn-lg btn-block"
                                 onClick={(event) => this.confirmOrderHandler(event,shoppingTotal)}
                                 // onClick={(event) => this.paymentProcess(event)}
@@ -346,7 +368,10 @@ class Checkout extends Component {
                         </form>
                     </div>
                 </div>
+                {this.state.loading && <Loading loading={this.state.loading} />}
             </div>
+            </div>
+
         )
     }
 }
@@ -381,8 +406,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        confirmOrderProp: (order) => dispatch(confirmOrder(order, ownProps)),
+        confirmOrderProp: (order,func) => dispatch(confirmOrder(order, func, ownProps)),
         setPromoCodeProp: (promoCode, percentage) => dispatch(setPromoCode(promoCode, percentage)),
+        confirmOrderSuccProp:()=>dispatch(confirmOrderSuccess()),
+        fetchProdProp:()=>dispatch(fetchProducts())
     }
 };
 

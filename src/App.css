@@ -8,7 +8,8 @@
 .navbar {
   position: static;
 }
-
+ .btn-lg {
+  padding: 0.4rem 1rem;}
 .shop-container {
   width: 75%;
   margin-top: 80px;
@@ -289,6 +290,7 @@ nav {
 
 .shop-cart-b-container {
   text-align: right !important;
+  margin-top:28px !important;
 }
 
 .shop-empty-cart a,
@@ -585,7 +587,7 @@ input[type="radio"] {
 
   .shop-cart-b-container {
     text-align: left !important;
-    margin-top: 24% !important;
+    margin-top: 4% !important;
   }
 
   .btn-outline-secondary {
@@ -867,4 +869,11 @@ input[type="radio"] {
   position: fixed !important;
   z-index: 999 !important;
   width: 100%;
+}
+
+.order {
+  margin-top:5% !important;
+}
+.clock{
+  background-color: linear-gradient(rgba(0,0,0.5),rgba(0,0,0,0.5)) !important;
 }

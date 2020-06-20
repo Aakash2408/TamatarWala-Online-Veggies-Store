@@ -13,7 +13,7 @@ const orderList = (props) => {
                         
                         <div className="col-sm-5 col-md-4 shop-cart-product-details">
                             <h5 className="shop-cart-name text-capitalize">Order ID:{props.orderId}</h5>
-                            
+                            {props.paymentId && <h5 className="shop-cart-name text-capitalize">Payment ID:{props.paymentId}</h5>}
                         </div>
                         <div className="col-sm-7 col-md-6">
                             <div className="row">

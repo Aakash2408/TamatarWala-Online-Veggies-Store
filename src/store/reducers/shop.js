@@ -24,16 +24,16 @@ const initialState = {
     deliveryOptions: [
         {
             id: 1,
-            name: 'standard',
-            duration: '24 - 72 hours',
-            cost: 50
+            name: 'Standard',
+            duration: '2 - 4 hours',
+            cost: 0
         },
-        {
-            id: 2,
-            name: 'fastest',
-            duration: '1 - 24 hours',
-            cost: 100
-        }
+        // {
+        //     id: 2,
+        //     name: 'fastest',
+        //     duration: '1 - 24 hours',
+        //     cost: 100
+        // }
     ],
     productMaxShowModal: false,
     modalMessage: null,

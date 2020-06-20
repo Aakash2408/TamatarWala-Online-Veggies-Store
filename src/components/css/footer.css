@@ -45,3 +45,11 @@
    
     text-decoration: none;
 }
+@media srceen and(max-width:390px){
+    .copyright{
+        font-size:0.4em !important;
+    }
+    .css-1a40wnc{
+        font-size:0.4em !important;
+    }
+}

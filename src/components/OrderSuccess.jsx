@@ -10,7 +10,7 @@ const orderSuccess = () => {
                         <Link className="btn btn-lg shop-btn-secondary checkout" to={'/'}>
                             Continue Shopping
                         </Link>
-                        <div className={'text-muted py-3'}>check your order object in your console</div>
+                        <div className={'text-muted py-3'}>Check your order  in your Orders </div>
                     </div>
             </React.Fragment>
         )

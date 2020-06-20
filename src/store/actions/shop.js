@@ -1,5 +1,6 @@
 import * as actionTypes from './actionTypes';
-import firebase from 'firebase';
+import firebase from 'firebase'
+import axios from 'axios'
 export const addToCart = (productId, productQuantity) => {
     return {
         type: actionTypes.ADD_TO_CART,
@@ -94,39 +95,45 @@ export const updateCartProductCount = (value, productId) => {
     }
 };
 
-export function reduceQuantities(order){
-    const firestore = firebase.firestore()
-    for(var i=0;i<order.length;i++){
-        const dec = firebase.firestore.FieldValue.increment(-order[i].count)
-
-        firestore.collection('products').doc(order[i].doc_id).update({
-            quantity:dec
-        })
+export const placeOrder = ()=>{
+    return{
+        type:actionTypes.ORDER_PLACING
     }
-    
-
 }
 
-export const confirmOrder = (order, ownProps) => {
+// export function reduceQuantities(order){
+//     const firestore = firebase.firestore()
+//     for(var i=0;i<order.length;i++){
+//         const dec = firebase.firestore.FieldValue.increment(-order[i].count)
+
+//         firestore.collection('products').doc(order[i].doc_id).update({
+//             quantity:dec
+//         })
+//     }
+    
+
+// }
+
+export const confirmOrder = (order, func, ownProps) => {
     return dispatch => {
 
-        dispatch(confirmOrderSuccess());
-        const db = firebase.firestore();
-        db.settings({
-            timestampsInSnapshots: true
-        });
+        // dispatch(placeOrder());
+
+
         const unsubs = firebase.auth().onAuthStateChanged(user=>{
             if(user){
-                const userRef = db.collection('users').doc(user.uid).collection('orders').add({
-                    "cart":order['cart'],
-                    "price":order['price'],
-                    "date":new Date().toLocaleString(),
-                    "user_details":order['user']
-                 }).then((r)=>{
-                     reduceQuantities(order.cart)
-                     dispatch(confirmOrderSuccess());
-                     dispatch(fetchProducts())
-                 });
+                let url = 'https://us-central1-online-shop-32976.cloudfunctions.net/payment/create_order'  //paste the url here
+                let url1 = 'http://localhost:4000/create_order'
+                axios.post(url,{user_id:user.uid,amount:order['price'],order:{...order,date:new Date().toLocaleString()}}).then(r=>{
+                    if(r.data.code==200){
+                        let order_id = r.data.order_id
+                        func(order_id,order['price'])
+                    }else{
+
+                        alert("Error placing the order")
+                    }
+                })
+
             }else{
                 dispatch(confirmOrderFailure())
                 ownProps.history.push('/cart');                
@@ -134,12 +141,12 @@ export const confirmOrder = (order, ownProps) => {
         })
 
 
-        ownProps.history.push('/cart');
+        // ownProps.history.push('/cart');
 
-        setTimeout(() => {
+        // setTimeout(() => {
             
-            dispatch(resetOrderSuccess())
-        }, 5000)
+        //     dispatch(resetOrderSuccess())
+        // }, 5000)
     }
 };
 
