@@ -1,0 +1,189 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+.css-vz0s8c {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-top: 10px;
+  min-width: 0;
+  padding: 30px;
+  /* margin-bottom: 30px; */
+  border-radius: 6px;
+  background-color: white;
+}
+
+/* 
+
+.grid-container{
+    display: grid;
+    grid-template-areas: "main";
+    grid-template-columns: 1fr;
+    grid-template-rows: 5rem 1fr 5rem;
+    height:100%;
+} */
+.products {
+  position: relative;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 30px;
+  list-style-type: none;
+  -ms-grid-columns: 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+@media screen and (max-width: 1264px) {
+  .products {
+    -ms-grid-columns: 1fr 30px 1fr 30px 1fr 30px 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+@media screen and (max-width: 912px) {
+  .products {
+    -ms-grid-columns: 1fr 30px 1fr 30px 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 764px) {
+  .products {
+    -ms-grid-columns: 1fr 30px 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .product-image {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    min-width: 0;
+    position: relative;
+    margin-top: 40px;
+    height: 5.5rem !important;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+}
+
+.product {
+  position: relative;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-top: 20px;
+  margin-left: 20px;
+  /* cursor: pointer; */
+  pointer-events: all;
+}
+.css-box {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+}
+.product-image {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  position: relative;
+  margin-top: 40px;
+  height: 7rem;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+.product-price {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-top: 20px;
+  min-width: 0;
+  color: #292929;
+  font-weight: 700;
+}
+.product-name {
+  -webkit-box-sizing: border-box;
+
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  font-family: Poppins, serif;
+  font-weight: 700;
+  line-height: initial;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 2;
+  font-family: Open Sans, sans-serif;
+  margin-top: 8px;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.css-qiwenx {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+
+  min-width: 0;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+.css-pncr0q {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  -webkit-appearance: none;
+  text-align: center;
+  line-height: inherit;
+  text-decoration: none;
+  font-size: inherit;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: #ffffff;
+  border: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 6px;
+  min-width: 38px;
+  min-height: 28px;
+  background-color: #c0c0c0;
+  padding: 0;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  margin-left: auto;
+  -webkit-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.css-pncr0q:hover {
+  background-color: black !important;
+  color: white !important;
+  -webkit-transition: 0.22s ease-in;
+  -o-transition: 0.22s ease-in;
+  transition: 0.22s ease-in;
+}

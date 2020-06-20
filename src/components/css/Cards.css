@@ -1,0 +1,78 @@
+/* .white-text{
+    text-align: center !important;
+    margin-left: auto;
+} */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@media screen and (max-width: 768px){
+
+    .card-image{
+     margin-top:20px;
+     height:18vh !important;
+     background-size: cover;
+     background-position: center;
+     border-radius: 5px !important;
+     grid-template-columns: 1fr 1fr 1fr  !important ;
+    }
+     .MDBRow{
+        grid-template-columns: 1fr 1fr 1fr  !important ;
+     }
+
+
+}
+.css-fqak9j {
+    box-sizing: border-box;
+    margin: 0;
+    min-width: 0;
+    font-family: Poppins,serif;
+    font-weight: 700;
+    line-height: initial;
+}
+    
+
+
+.card-image::after {
+ content: "";
+display: block;           
+ width: 100%;
+height: 100%;
+border-radius: 5px;
+ background: linear-gradient(to right,rgba(0,0,0,0.7) ,rgba(0,0,0,0.6));
+ position: absolute;
+top: 0;
+left: 0;
+z-index: 0;
+}
+
+
+
+.text-white{
+    z-index: 999;
+    padding-top:37% !important;
+    text-align: center;
+    font-weight: 370;
+    font-size: 1.4em;
+    
+} 
+
+@media screen and (max-width: 768px){
+    .text-white{
+        padding-top:15% !important;
+        font-size: 1.1em;
+
+    }
+}
+
+.css-yuvicf svg {
+    width: 20px;
+    height: auto;
+    margin-left: 10px;
+    position: relative;
+    margin-top: 4px;
+}
+
+.card-image{
+    margin-top:10px;
+    border-radius: 7px;
+    
+}
+    

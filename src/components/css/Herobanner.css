@@ -1,0 +1,354 @@
+.css-11zk6ke {
+    box-sizing: border-box;
+    margin: 0;
+    min-width: 0;
+    width: 100%;
+    max-width: 1240px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    /* padding-top: 20px; */
+    padding-bottom: 20px;
+}
+@media screen and (min-width: 1024px){
+.css-c5gjwr {
+    min-height: 500px;
+    padding: 60px;
+}}
+@media screen and (max-width: 1024px){
+    .css-c5gjwr {
+        min-height: 400px;
+        padding: 60px;
+    }
+
+}
+@media screen and (max-width: 768px){
+.css-c5gjwr {
+    min-height: 300px !important;
+    padding: 30px;
+}}
+@media screen and (min-width: 768px){
+
+body {
+    font-size: 15px;
+}
+}
+@media screen and (max-width: 768px){
+
+.css-c5gjwr::after {
+    background: linear-gradient(to right,rgba(0,0,0,0.9) ,rgba(0,0,0,0.9)) ;
+}
+}
+
+.css-c5gjwr {
+    box-sizing: border-box;
+    margin-top: 80px;
+    min-width: 0;
+    background-image: url(https://images.prismic.io/jamcart/53362f6b-a9fc-4cfe-81d8-45d7de33ebba_home-banner.png?auto=compress,format);
+    /* display: -webkit-box; */
+    /* display: -webkit-flex; */
+    /* display: -ms-flexbox; */
+    display: flex;
+    /* -webkit-flex-direction: column; */
+    /* -ms-flex-direction: column; */
+    flex-direction: column;
+    -webkit-box-pack: end;
+    /* -webkit-justify-content: flex-end; */
+    /* -ms-flex-pack: end; */
+    justify-content: flex-end;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* min-height: 300px; */
+    /* padding: 20px; */
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+}
+.css-1wu2h8j {
+    box-sizing: border-box;
+    margin: 0;
+    display: block;
+    min-width: 0;
+    color: #ffffff;
+    position: relative;
+    z-index: 1;
+}
+.css-c5gjwr::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right,rgba(0,0,0,0.8) ,rgba(0,0,0,0)) !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+h1 {
+    display: block;
+   
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 1024px){
+.css-1wu2h8j h1 p {
+    margin-bottom: 30px;
+}}
+@media screen and (min-width: 768px){
+.css-1wu2h8j h1 p {
+    font-size: 30px;
+    line-height: initial;
+   
+}}
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+@media screen and (min-width: 1024px){
+.css-1wu2h8j button {
+    margin-top: 60px;
+}}
+
+.css-j5c32g {
+    box-sizing: border-box;
+    margin: 0;
+    /* min-width: 0; */
+     -webkit-appearance: none;
+    /* -moz-appearance: none;
+    appearance: none;  */
+    /* display: inline-block; */
+    text-align: center;
+    line-height: inherit;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    font-size: inherit;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    /* color: #ffffff; */
+    /* background-color: #292929; */
+    border: 0;
+    /* border-radius: 4px; */
+    color: #292929;
+    background-color: #ffffff;
+    /* display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox; */
+    display: flex;
+    /* -webkit-align-items: center; */
+    /* -webkit-box-align: center; */
+    /* -ms-flex-align: center; */
+    align-items: center;
+    -webkit-box-pack: center;
+    /* -webkit-justify-content: center; */
+    /* -ms-flex-pack: center; */
+    justify-content: center;
+    cursor: pointer;
+    /* min-width: 130px; */
+    /* min-height: 40px; */
+    border-radius: 6px;
+    font-weight: 700;
+    text-transform: capitalize;
+    /* -webkit-transition: all 0.2s ease; */
+    transition: all 0.2s ease;
+}
+.button{
+    padding:10px 20px 10px 20px;
+    text-decoration: none !important;
+}
+:-webkit-any(article,aside,nav,section) h1 {
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+}
+
+@media screen and (min-width: 768px){
+.css-c5gjwr::after {
+    background: linear-gradient(to right,rgba(0,0,0,0.48) ,rgba(0,0,0,0));
+}
+}
+@media screen and (min-width: 768px){
+
+body {
+    font-size: 15px;
+}
+}
+
+
+
+
+/*footer card*/
+@media screen and (min-width: 1024px){
+.css-1r974q8 {
+    padding: 60px;
+}}
+@media screen and (min-width: 768px){
+.css-1r974q8 {
+    background-position: center right;
+    min-height: 350px;
+    /* padding: 30px; */
+}
+}
+.css-1r974q8 {
+    box-sizing: border-box;
+    margin: 0;
+    min-width: 0;
+    background-image: url(https://images.prismic.io/jamcart/268326fa-d7e9-4c9b-97f0-a9466dfa493f_Group+3786.jpg?auto=compress,format);
+    /* display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox; */
+    display: flex;
+    /* -webkit-flex-direction: column;
+    -ms-flex-direction: column; */
+    flex-direction: column;
+    -webkit-box-pack: center;
+    /* -webkit-justify-content: center; */
+    /* -ms-flex-pack: center; */
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-position: center; */
+    /* min-height: 280px;
+    padding: 20px; */
+    margin-top:20px;
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+}
+
+
+.css-hsntkc {
+    box-sizing: border-box;
+    margin: 0;
+    min-width: 0;
+    color: #ffffff;
+    position: relative;
+    z-index: 1;
+}
+
+@media screen and (min-width: 768px){
+.css-1r974q8::after {
+    background: linear-gradient(to right,rgba(0,0,0,0.48) ,rgba(0,0,0,0));
+}
+}
+
+.css-1r974q8::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(to right,rgba(0,0,0,0.75) ,rgba(0,0,0,0)); */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+@media screen and (min-width: 768px){
+.css-hsntkc h1 {
+    font-size: 30px;
+    line-height: 45px;
+    margin-bottom: 30px;
+}
+}
+h1 {
+    display: block;
+    /* font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em; */
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+@media screen and (min-width: 768px){
+
+ p {
+    line-height: 1.4;
+}
+}
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+@media screen and (min-width: 768px){
+.css-hsntkc button {
+    margin-top: 35px;
+ }
+}
+.css-hsntkc button {
+    min-width: 146px;
+   
+}
+@media screen and (min-width: 768px){
+.css-j5c32g {
+    
+    min-height: 50px;
+ }
+
+}
+
+.css-j5c32g {
+    box-sizing: border-box;
+    margin: 0;
+    /* min-width: 0; */
+    -webkit-appearance: none;
+    /* -moz-appearance: none;
+    appearance: none;
+    display: inline-block; */
+    text-align: center;
+    line-height: inherit;
+    /* -webkit-text-decoration: none; */
+    text-decoration: none;
+    font-size: inherit;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    /* color: #ffffff;
+    background-color: #292929; */
+    border: 0;
+    /* border-radius: 4px; */
+    color: #292929;
+    background-color: #ffffff;
+    /* display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox; */
+    display: flex;
+    /* -webkit-align-items: center; */
+    -webkit-box-align: center;
+    /* -ms-flex-align: center; */
+    align-items: center;
+    -webkit-box-pack: center;
+    /* -webkit-justify-content: center;
+    -ms-flex-pack: center; */
+    justify-content: center;
+    cursor: pointer;
+    /* min-width: 130px;
+    min-height: 40px; */
+    border-radius: 6px;
+    font-weight: 700;
+    text-transform: capitalize;
+    /* -webkit-transition: all 0.2s ease; */
+    transition: all 0.2s ease;
+}
