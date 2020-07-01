@@ -11,7 +11,7 @@
 
 
 ## Buy me a Coffee
-<a href="https://paypal.me/AakashSangwan/20/"><img src="https://www.sonyalooney.com/wp-content/uploads/paypal-donate-button.png" height="60" width:"140"></a>  
+<a href="https://paypal.me/AakashSangwan/20/"><img src="https://www.sonyalooney.com/wp-content/uploads/paypal-donate-button.png" height="60" width="140"></a>  
 If  this code helped you  or just feeling generous, consider buying me a Coffee. Cheers!
 
 
