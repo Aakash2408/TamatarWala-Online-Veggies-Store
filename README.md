@@ -1,10 +1,10 @@
-![Depfu](https://img.shields.io/depfu/Aakash2408/TamatarWala?style=plastic)
+  ![GitHub repo size](https://img.shields.io/github/repo-size/Aakash2408/TamatarWala)     ![GitHub package.json version](https://img.shields.io/github/package-json/v/Aakash2408/TamatarWala)     ![GitHub issues](https://img.shields.io/github/issues/Aakash2408/TamatarWala)     ![GitHub last commit](https://img.shields.io/github/last-commit/aakash2408/TamatarWala)
 
 ## Live :
-https://online-shop-32976.firebaseapp.com/
+    https://online-shop-32976.firebaseapp.com/
  
-### Use Dummy card Details in Test Version: 	
-4111 1111 1111 1111
+## Use Dummy card Details in Test Version: 	
+    4111 1111 1111 1111
 
 ## Setup
 
@@ -17,7 +17,7 @@ https://online-shop-32976.firebaseapp.com/
 
 ## Buy me a Coffee
 <a href="https://paypal.me/AakashSangwan/20/"><img src="https://www.sonyalooney.com/wp-content/uploads/paypal-donate-button.png" height="60" width="140"></a>  
-If  this code helped you  or just feeling generous, consider buying me a Coffee. Cheers!
+If  any part of this code helped you or just feeling generous, consider buying me a Coffee. Cheers!
 
 
 
