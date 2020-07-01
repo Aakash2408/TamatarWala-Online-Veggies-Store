@@ -1,23 +1,34 @@
-  ![GitHub repo size](https://img.shields.io/github/repo-size/Aakash2408/TamatarWala)     ![GitHub package.json version](https://img.shields.io/github/package-json/v/Aakash2408/TamatarWala)     ![GitHub issues](https://img.shields.io/github/issues/Aakash2408/TamatarWala)     ![GitHub last commit](https://img.shields.io/github/last-commit/aakash2408/TamatarWala)
+# TamatarWala 
+![GitHub repo size](https://img.shields.io/github/repo-size/Aakash2408/TamatarWala)     ![GitHub package.json version](https://img.shields.io/github/package-json/v/Aakash2408/TamatarWala)     ![GitHub issues](https://img.shields.io/github/issues/Aakash2408/TamatarWala)     ![GitHub last commit](https://img.shields.io/github/last-commit/aakash2408/TamatarWala)
+
 
 ## Live :
     https://online-shop-32976.firebaseapp.com/
- 
+
+
 ## Use Dummy card Details in Test Version: 	
+    
     4111 1111 1111 1111
+    
+ 
+ ## Mobile View:  
+ 
+<img src="https://user-images.githubusercontent.com/47134609/86297075-048fee80-bc18-11ea-9e29-a2a7fc1b6ad9.png" width="148"> <img src="https://user-images.githubusercontent.com/47134609/86296897-8f241e00-bc17-11ea-8dc3-15f74702d4b7.png" width="148"> <img src="https://user-images.githubusercontent.com/47134609/86297442-f8f0f780-bc18-11ea-972d-cc3498840d87.png" width="148"> <img src="https://user-images.githubusercontent.com/47134609/86296940-ae22b000-bc17-11ea-8fe7-6f5735e42360.png" width="148"> <img src="https://user-images.githubusercontent.com/47134609/86297188-4faa0180-bc18-11ea-967a-7caf9c10b873.png" width="148">   <img src="https://user-images.githubusercontent.com/47134609/86296907-99deb300-bc17-11ea-92dd-6a710a8fccc0.png" width="148"> 
+
 
 ## Setup
 
-1. Run `npm install` in root directory, to install all required dependencies.
-2. Use `npm start` to start to run  the application.
-3. Run `npm install` in Payment-Backend, to install all required dependencies for Razorpay functions .
+     1. Run `npm install` in root directory, to install all required dependencies.
+     2. Use `npm start` to start to run  the application.
+     3. Run `npm install` in Payment-Backend, to install all required dependencies for Razorpay functions .
 
 
 
 
 ## Buy me a Coffee
-<a href="https://paypal.me/AakashSangwan/20/"><img src="https://www.sonyalooney.com/wp-content/uploads/paypal-donate-button.png" height="60" width="140"></a>  
-If  any part of this code helped you or just feeling generous, consider buying me a Coffee. Cheers!
+<a href="https://paypal.me/AakashSangwan/20/"><img src="https://raw.githubusercontent.com/aha999/DonateButtons/master/Paypal.png" height="120" width="340"></a>   
+
+#### If  any part of this code helped you or just feeling generous, consider buying me a Coffee. Cheers!
 
 
 
