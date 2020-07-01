@@ -4,7 +4,9 @@ node_js:
   - node
 
 install:
-  - npm ci
+  - npm install
 
 script:
-  - npm start
+  - npm run lint
+  - npm run test:coveralls
+  
