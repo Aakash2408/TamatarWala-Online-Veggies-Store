@@ -1,4 +1,5 @@
-<a href="https://img.shields.io/depfu/Aakash2408/TamatarWala?style=flat-square">
+![Depfu](https://img.shields.io/depfu/Aakash2408/TamatarWala?style=plastic)
+
 ## Live :
 https://online-shop-32976.firebaseapp.com/
  
