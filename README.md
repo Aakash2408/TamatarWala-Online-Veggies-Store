@@ -1,5 +1,9 @@
 
-
+## Live :
+https://online-shop-32976.firebaseapp.com/
+ 
+### Use Dummy card Details in Test Version: 	
+4111 1111 1111 1111
 
 ## Setup
 
