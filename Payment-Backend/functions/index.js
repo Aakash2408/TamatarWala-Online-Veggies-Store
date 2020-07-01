@@ -24,7 +24,7 @@ const keys = {
     }
 }
 
-const instance = new rzp(keys.razorpay_key)
+const instance = new rzp(keys.razorpay_test_key)
 const app = express()
 app.use(cors())
 app.use(bp.json())
