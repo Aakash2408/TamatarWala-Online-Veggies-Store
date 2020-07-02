@@ -3,7 +3,7 @@
 
 
 ## Live :
-    https://online-shop-32976.firebaseapp.com/
+   https://online-shop-32976.firebaseapp.com/
 
 
 ## Use Dummy card Details in Test Version: 	
