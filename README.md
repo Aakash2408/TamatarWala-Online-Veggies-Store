@@ -1,5 +1,5 @@
 # TamatarWala 
-![GitHub repo size](https://img.shields.io/github/repo-size/Aakash2408/TamatarWala)     ![GitHub package.json version](https://img.shields.io/github/package-json/v/Aakash2408/TamatarWala)     ![GitHub issues](https://img.shields.io/github/issues/Aakash2408/TamatarWala)     ![GitHub last commit](https://img.shields.io/github/last-commit/aakash2408/TamatarWala)
+![GitHub repo size](https://img.shields.io/github/repo-size/Aakash2408/TamatarWala)     ![GitHub package.json version](https://img.shields.io/github/package-json/v/Aakash2408/TamatarWala)     ![GitHub issues](https://img.shields.io/github/issues/Aakash2408/TamatarWala)    ![David](https://img.shields.io/david/dev/aakash2408/TamatarWala)        ![GitHub stars](https://img.shields.io/github/stars/aakash2408/TamatarWala?style=social)
 
 
 ## Live :
